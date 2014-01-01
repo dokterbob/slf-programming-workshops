@@ -25,23 +25,30 @@
 	document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
 	</script>
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+
+	<style type="text/css">
+		.dropshadow h1, .dropshadow h2, .dropshadow {
+			text-shadow: 0 0 10px #000;
+		}
+	</style>
+
 	</head>
 
 	<body>
 
 		<div class="reveal">
 			<div class="slides">
-				<section data-background-image="https://s3.amazonaws.com/media-p.slid.es/uploads/dokterbob/images/203769/And-Now-For-Something-Completely-Different-1336471.jpg">
-					<h1 style="text-shadow: 0 0 10px #000;">
-						Python/programming<br>
+				<section data-background-image="https://s3.amazonaws.com/media-p.slid.es/uploads/dokterbob/images/203769/And-Now-For-Something-Completely-Different-1336471.jpg" class="dropshadow">
+					<h1>
+						Python/programming
 					</h1>
-					<h2 style="text-shadow: 0 0 10px #000;">
+					<h2>
 						Lecture 1 of 3
 					</h2>
-					<div style="text-shadow: 0 0 20px #000;">
+					<div>
 						<div>Mathijs de Bruin, &nbsp;January 7, 2014</div>
 						<div>The WSL Institute for Snow and Avalanche Research SLF</div>
 					</div>
@@ -51,222 +58,214 @@
 					<div>
 						<ul>
 							<li>
-								<span style="text-align: center;">BSc&nbsp;</span>
-								<span style="text-align: center;">Physics, BA Philosophy</span>
-								<br>
+								BSc&nbsp; Physics, BA Philosophy
 							</li>
 							<li>
-								<span style="text-align: center;">Programming since 9 y/o</span>
-								<br>
+								Programming since 9 y/o
 							</li>
 							<li>
-								<span style="text-align: center;">Python fanboy for 10+ years</span>
-								<br>
+								Python fanboy for 10+ years
 							</li>
 							<li>
-								<span style="text-align: center;">Open Source all the things!</span>&nbsp;</li>
+								Open Source all the things!
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section>
+					<h2>About you</h2>
+					<div>Common problems?</div>
+					<div>&nbsp;</div>
+					<div>
+						Documentation? Revision control? Packaging? Code structuring? Text editor WTF? Syntax errors? Testing? Weird bugs? Compilation hell? Whatsitmean? Reinventing the wheel? Whodunnit? Wheresitlive? (...)
+					</div>
+				</section>
+				<section>
+					<h2>About the workshop</h2>
+					<div style="padding-bottom: 1em;">Three days, three lectures, three themes:</div>
+					<div>
+						<ol>
+							<li>SciPy,&nbsp;Shell/CLI and Python debugging</li>
+							<li>Best practises, structure and modular programming</li>
+							<li>Version control, project structure</li>
+						</ol>
+					</div>
+
+				</section>
+					<section>
+						<h2>About the workshop</h2>
+						<div>Program structure:</div>
+						<div>
+							<ul style="list-style: none;">
+								<li>
+									<span style="text-align: center;">10:00 - 10:30 &nbsp;Walk in</span>, questions<br>
+								</li>
+								<li>
+									<span style="text-align: center;">10:30 - 12:00 &nbsp;Theme lecture</span>
+									<br>
+								</li>
+								<li>
+									<span style="text-align: center;">12:00 - 13:00 &nbsp;Lunch</span>
+									<br>
+								</li>
+								<li>
+									<span style="text-align: center;">13:00 - 18:00 &nbsp;Workshop</span>
+									<br>
+								</li>
 							</ul>
 						</div>
 					</section>
 					<section>
-						<h2>About you</h2>
-						<div>Common problems?</div>
+						<h2>Program - day 1</h2>
 						<div>
-							<br>
+							<ol>
+								<li>Introduction and overview</li>
+								<li>Discussion of common problems</li>
+								<li>Scientific Python distributions</li>
+								<li>Bash shell/Command Line Interface</li>
+								<li>Python shell, IPython, debugging</li>
+								<li>Installing and managing packages, PyPI</li>
+								<li>Taming your text editor</li>
+							</ol>
 						</div>
 						<div>
-							<span style="font-size: 36px; font-style: normal; font-variant: normal;">Documentation? Revision control? Packaging? Code structuring? Text editor WTF? Syntax errors? Testing? Weird bugs? Compilation hell? Whatsitmean? Reinventing the wheel? Whodunnit? Wheresitlive? (...)</span>
-							<span style="font-size: 36px; font-style: normal; font-variant: normal;">&nbsp;</span>
 							<br>
 						</div>
 					</section>
 					<section>
-						<h2>About the workshop</h2>
-						<div style="padding-bottom: 1em;">Three days, three lectures, three themes:</div>
+						<h2>Program - day 2</h2>
+						<ol>
+							<li>Typical gotchas; weak references, immutables</li>
+							<li>Best practises
+								<ul>
+									<li>Classes, methods and functions; use them!</li>
+									<li>Code formatting; PEP8</li>
+									<li>Don’t repeat yourself; DRY</li>
+									<li>Organizing your code; minimize globals, cleanout imports</li>
+									<li>Comments, Docstrings: documentation</li>
+								</ul>
+							</li>
+							<li>Working with modules, project structure</li>
+							<li>Packaging, creating reusable code</li>
+						</ol>
+					</section>
+					<section>
+						<h2>
+							<span>program - day 3</span>
+							<br>
+						</h2>
 						<div>
 							<ol>
-								<li>
-									<span style="font-size: 36px; font-style: normal; font-variant: normal;">SciPy,&nbsp;</span>Shell/CLI and Python debugging</li>
-									<li>Best practises, structure and modular programming</li>
-									<li>Version control, project structure</li>
-								</ol>
-							</div>
-
-						</section>
-						<section>
-							<h2>About the workshop</h2>
-							<div>Program structure:</div>
-							<div>
-								<ul style="list-style: none;">
-									<li>
-										<span style="text-align: center;">10:00 - 10:30 &nbsp;Walk in</span>, questions<br>
-									</li>
-									<li>
-										<span style="text-align: center;">10:30 - 12:00 &nbsp;Theme lecture</span>
-										<br>
-									</li>
-									<li>
-										<span style="text-align: center;">12:00 - 13:00 &nbsp;Lunch</span>
-										<br>
-									</li>
-									<li>
-										<span style="text-align: center;">13:00 - 18:00 &nbsp;Workshop</span>
-										<br>
-									</li>
-								</ul>
-							</div>
-						</section>
-						<section>
-							<h2>Program - day 1</h2>
-							<div>
-								<ol>
-									<li>Introduction and overview</li>
-									<li>Discussion of common problems</li>
-									<li>Scientific Python distributions</li>
-									<li>Bash shell/Command Line Interface</li>
-									<li>Python shell, IPython, debugging</li>
-									<li>Installing and managing packages, PyPI</li>
-									<li>Taming your text editor</li>
-								</ol>
-							</div>
-							<div>
-								<br>
-							</div>
-						</section>
-						<section>
-							<h2>Program - day 2</h2>
-							<ol>
-								<li>Typical gotchas; weak references, immutables</li>
-								<li>Best practises
+								<li>Version control; what, how and why?</li>
+								<li>GIT concepts
 									<ul>
-										<li>Classes, methods and functions; use them!</li>
-										<li>Code formatting; PEP8</li>
-										<li>Don’t repeat yourself; DRY</li>
-										<li>Organizing your code; minimize globals, cleanout imports</li>
-										<li>Comments, Docstrings: documentation</li>
+										<li>Branches</li>
+										<li>Commits</li>
+										<li>Forks</li>
+										<li>Merges</li>
+										<li>Hashes</li>
 									</ul>
 								</li>
-								<li>Working with modules, project structure</li>
-								<li>Packaging, creating reusable code</li>
+								<li>Setting up an example project</li>
+								<li>And hosting it too (Bitbucket, GitHub)</li>
+								<li>Having your code and forking it too</li>
 							</ol>
-						</section>
-						<section>
-							<h2>
-								<span>program - day 3</span>
-								<br>
-							</h2>
-							<div>
-								<ol>
-									<li>Version control; what, how and why?</li>
-									<li>GIT concepts
-										<ul>
-											<li>Branches</li>
-											<li>Commits</li>
-											<li>Forks</li>
-											<li>Merges</li>
-											<li>Hashes</li>
-										</ul>
-									</li>
-									<li>Setting up an example project</li>
-									<li>And hosting it too (Bitbucket, GitHub)</li>
-									<li>Having your code and forking it too</li>
-								</ol>
-							</div>
-						</section>
-						<section data-background-image="https://s3.amazonaws.com/media-p.slid.es/uploads/dokterbob/images/203772/And-now.jpg" data-background-size="contain">
-							<h2>
-								<br>
-							</h2>
-						</section>
-						<section>
-							<h2>Installing Python</h2>
-							<p>What goes wrong?</p>
-							<div>
-								<ul>
-									<li>Different versions of Python (2.6, 2.7, 3.3, ...)</li>
-									<li>Different operating systems (Mac, Linux, Windows)</li>
-									<li>Different versions of distributions (OS, official, other)</li>
-									<li>Different versions of dependencies (Numpy etc.)</li>
-									<li>Compilation problems (binary dependencies)</li>
-									<li>More compilation problems</li>
-								</ul>
-							</div>
-							<p>
-								<br>
-							</p>
-							<h3>Ergo: Lot's of confusion.</h3>
-							<p>
-							</p>
-						</section>
-						<section>
-							<h2>Installing Python</h2>
-							<p>Several options</p>
-							<div>
-								<ol>
-									<li>System Python (Mac, Linux)</li>
-									<li>Official Python</li>
-									<li>Scientific distributions <span>(Anaconda, Enthought)</span>
-									</li>
-								</ol>
-							</div>
-						</section>
-						<section>
-							<h2>System Python</h2>
-							<div>
-								<ul>
-									<li>Often outdated</li>
-									<li>Installing/compiling Python packages difficult</li>
-									<li>No support for SciPy, Numpy etc.</li>
-									<li>Differences across OS'es</li>
-									<li>Requires no administrator privileges</li>
-									<li>Not available on Windows</li>
-								</ul>
-							</div>
-						</section>
-						<section>
-							<h2>Official Python</h2>
-							<div>
-								<ul>
-									<li>
-										<span>Fully up to date</span>
-									</li>
-									<li style="font-size: 36px; font-style: normal; font-variant: normal;">Installing/compiling Python packages difficult</li>
-									<li style="font-size: 36px; font-style: normal; font-variant: normal;">Installation of SciPy, Numpy etc. supported</li>
-									<li>
-										<span>Requires administrator privileges</span>
-									</li>
-								</ul>
-							</div>
-						</section>
-						<section>
-							<h2>Scientific Python distributions</h2>
-							<p>Preferred and suggested method.</p>
-							<div>
-								<ul>
-									<li>
-										<span style="text-align: center;">Two tastes: Anaconda, Enthought</span>
-										<br>
-									</li>
-									<li>
-										<span style="text-align: center;">Almost fully up to date</span>
-									</li>
-									<li>
-										<span style="text-align: center;">Requires adminstrator privileges, only initially</span>
-									</li>
-									<li>
-										<span style="text-align: center;">SciPy, Numpy etc. installed by default</span>
-									</li>
-									<li>
-										<span style="text-align: center;">Same versions of packages&nbsp;across platforms</span>
-										<br>
-									</li>
-									<li>
-										<span style="text-align: center;">Commercial support available</span>
-									</li>
-								</ul>
-							</div>
-						</section>
-					</div>
+						</div>
+					</section>
+					<section data-background-image="https://s3.amazonaws.com/media-p.slid.es/uploads/dokterbob/images/203772/And-now.jpg" data-background-size="contain">
+						<h2>
+							<br>
+						</h2>
+					</section>
+					<section>
+						<h2>Installing Python</h2>
+						<p>What goes wrong?</p>
+						<div>
+							<ul>
+								<li>Different versions of Python (2.6, 2.7, 3.3, ...)</li>
+								<li>Different operating systems (Mac, Linux, Windows)</li>
+								<li>Different versions of distributions (OS, official, other)</li>
+								<li>Different versions of dependencies (Numpy etc.)</li>
+								<li>Compilation problems (binary dependencies)</li>
+								<li>More compilation problems</li>
+							</ul>
+						</div>
+						<p>
+							<br>
+						</p>
+						<h3>Ergo: Lot's of confusion.</h3>
+						<p>
+						</p>
+					</section>
+					<section>
+						<h2>Installing Python</h2>
+						<p>Several options</p>
+						<div>
+							<ol>
+								<li>System Python (Mac, Linux)</li>
+								<li>Official Python</li>
+								<li>Scientific distributions <span>(Anaconda, Enthought)</span>
+								</li>
+							</ol>
+						</div>
+					</section>
+					<section>
+						<h2>System Python</h2>
+						<div>
+							<ul>
+								<li>Often outdated</li>
+								<li>Installing/compiling Python packages difficult</li>
+								<li>No support for SciPy, Numpy etc.</li>
+								<li>Differences across OS'es</li>
+								<li>Requires no administrator privileges</li>
+								<li>Not available on Windows</li>
+							</ul>
+						</div>
+					</section>
+					<section>
+						<h2>Official Python</h2>
+						<div>
+							<ul>
+								<li>
+									<span>Fully up to date</span>
+								</li>
+								<li style="font-size: 36px; font-style: normal; font-variant: normal;">Installing/compiling Python packages difficult</li>
+								<li style="font-size: 36px; font-style: normal; font-variant: normal;">Installation of SciPy, Numpy etc. supported</li>
+								<li>
+									<span>Requires administrator privileges</span>
+								</li>
+							</ul>
+						</div>
+					</section>
+					<section>
+						<h2>Scientific Python distributions</h2>
+						<p>Preferred and suggested method.</p>
+						<div>
+							<ul>
+								<li>
+									<span style="text-align: center;">Two tastes: Anaconda, Enthought</span>
+									<br>
+								</li>
+								<li>
+									<span style="text-align: center;">Almost fully up to date</span>
+								</li>
+								<li>
+									<span style="text-align: center;">Requires adminstrator privileges, only initially</span>
+								</li>
+								<li>
+									<span style="text-align: center;">SciPy, Numpy etc. installed by default</span>
+								</li>
+								<li>
+									<span style="text-align: center;">Same versions of packages&nbsp;across platforms</span>
+									<br>
+								</li>
+								<li>
+									<span style="text-align: center;">Commercial support available</span>
+								</li>
+							</ul>
+						</div>
+					</section>
+				</div>
 
 				</div>
 
@@ -282,6 +281,7 @@
 				progress: true,
 				history: true,
 				center: true,
+
 
 				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
 				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
