@@ -85,6 +85,7 @@ module.exports = function(grunt) {
 			}
 		},
 
+		/*
 		zip: {
 			'reveal-js-presentation.zip': [
 				'index.html',
@@ -95,6 +96,7 @@ module.exports = function(grunt) {
 				'plugin/**'
 			]
 		},
+		*/
 
 		watch: {
 			main: {
