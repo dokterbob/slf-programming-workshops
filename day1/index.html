@@ -33,6 +33,18 @@
 		.dropshadow h1, .dropshadow h2, .dropshadow {
 			text-shadow: 0 0 10px #000;
 		}
+
+		.active {
+			color: yellow;
+		}
+		.index {
+			position: absolute;
+			top: 20px;
+			left: 20px;
+		}
+		.index li {
+			font-size: 60%;
+		}
 	</style>
 
 	</head>
@@ -53,8 +65,9 @@
 						<div>The WSL Institute for Snow and Avalanche Research SLF</div>
 					</div>
 				</section>
+				<!--
 				<section>
-					<h2>Who am I?</h2>
+					<h2>About me</h2>
 					<div>
 						<ul>
 							<li>
@@ -72,9 +85,10 @@
 						</ul>
 					</div>
 				</section>
+				-->
 				<section>
-					<h2>About the workshop</h2>
-					<div style="padding-bottom: 1em;">Three days, three lectures, three themes:</div>
+					<h2>Python/programming workshop</h2>
+					<div style="padding-bottom: 1em;">Three days, three lectures</div>
 					<div>
 						<ol>
 							<li>SciPy,&nbsp;Shell/CLI and Python debugging</li>
@@ -82,33 +96,21 @@
 							<li>Version control, project structure</li>
 						</ol>
 					</div>
-
 				</section>
 				<section>
-					<h2>About the workshop</h2>
-					<div>Program structure:</div>
-					<div>
-						<ul style="list-style: none;">
-							<li>
-								<span style="text-align: center;">10:00 - 10:30 &nbsp;Walk in</span>, questions<br>
-							</li>
-							<li>
-								<span style="text-align: center;">10:30 - 12:00 &nbsp;Theme lecture</span>
-							</li>
-							<li>
-								<span style="text-align: center;">12:00 - 13:00 &nbsp;Lunch</span>
-							</li>
-							<li>
-								<span style="text-align: center;">13:00 - 18:00 &nbsp;Workshop</span>
-							</li>
-						</ul>
-					</div>
+					<h2>Python/programming workshop</h2>
+					<h3>Daily structure</h3>
+					<ol>
+						<li>Introductionary lecture ~ 1,5 hour</li>
+						<li>Hands-on with lecture material  ~ 2-3 hours</li>
+						<li>Support for particular projects ~ 2-3 hours</li>
+					</ol>
 				</section>
 				<section>
 					<h2>Program - day 1</h2>
 					<div>
 						<ol>
-							<li>Introduction and overview</li>
+							<li class="active">Introduction and overview</li>
 							<li>Inventarisation of common problems</li>
 							<li>Scientific Python distributions</li>
 							<li>Bash shell/Command Line Interface</li>
@@ -116,9 +118,6 @@
 							<li>Installing and managing packages, PyPI</li>
 							<li>Taming your text editor</li>
 						</ol>
-					</div>
-					<div>
-						<br>
 					</div>
 				</section>
 				<section>
@@ -162,22 +161,49 @@
 					</div>
 				</section>
 				<section data-background-image="https://s3.amazonaws.com/media-p.slid.es/uploads/dokterbob/images/203772/And-now.jpg" data-background-size="contain">
-					<h2>
-						<br>
-					</h2>
+					&nbsp;
 				</section>
 				<section>
-					<h2>About you</h2>
-					<div>Common problems?</div>
-					<div>&nbsp;</div>
+					<h2>Program - day 1</h2>
+					<div>
+						<ol>
+							<li>Introduction and overview</li>
+							<li class="active">Inventarisation of common problems</li>
+							<li>Scientific Python distributions</li>
+							<li>Bash shell/Command Line Interface</li>
+							<li>Python shell, IPython, debugging</li>
+							<li>Installing and managing packages, PyPI</li>
+							<li>Taming your text editor</li>
+						</ol>
+					</div>
+				</section>
+
+				<section>
+					<h2>Inventarisation</h2>
+					<h3>Common problems</h3>
 					<div>
 						Documentation? Revision control? Packaging? Code structuring? Text editor WTF? Syntax errors? Testing? Weird bugs? Compilation hell? Whatsitmean? Reinventing the wheel? Whodunnit? Wheresitlive? (...)
 					</div>
 				</section>
 
 				<section>
+					<h2>Program - day 1</h2>
+					<div>
+						<ol>
+							<li>Introduction and overview</li>
+							<li>Inventarisation of common problems</li>
+							<li class="active">Scientific Python distributions</li>
+							<li>Bash shell/Command Line Interface</li>
+							<li>Python shell, IPython, debugging</li>
+							<li>Installing and managing packages, PyPI</li>
+							<li>Taming your text editor</li>
+						</ol>
+					</div>
+				</section>
+
+				<section>
 					<h2>Installing Python</h2>
-					<p>What goes wrong?</p>
+					<h3>A recipe for failure</h3>
 					<div>
 						<ul>
 							<li>Different versions of Python (2.6, 2.7, 3.3, ...)</li>
@@ -188,27 +214,21 @@
 							<li>More compilation problems</li>
 						</ul>
 					</div>
-					<p>
-						<br>
-					</p>
-					<h3>Ergo: Lot's of confusion.</h3>
-					<p>
-					</p>
 				</section>
 				<section>
 					<h2>Installing Python</h2>
-					<p>Several options</p>
+					<h3>Available options</h3>
 					<div>
 						<ol>
 							<li>System Python (Mac, Linux)</li>
-							<li>Official Python</li>
-							<li>Scientific distributions <span>(Anaconda, Enthought)</span>
-							</li>
+							<li>Official distribtion (python.org)</li>
+							<li>Scientific distributions (Anaconda, Enthought)</li>
 						</ol>
 					</div>
 				</section>
 				<section>
 					<h2>System Python</h2>
+					<h3>Available on Mac and Linux</h3>
 					<div>
 						<ul>
 							<li>Often outdated</li>
@@ -219,9 +239,17 @@
 							<li>Not available on Windows</li>
 						</ul>
 					</div>
+					<div class="index">
+						<ol>
+							<li class="active">System Python (Mac, Linux)</li>
+							<li>Official distribtion (python.org)</li>
+							<li>Scientific distributions (Anaconda, Enthought)</li>
+						</ol>
+					</div>
 				</section>
 				<section>
 					<h2>Official Python</h2>
+					<h3>Available from python.org</h3>
 					<div>
 						<ul>
 							<li>
@@ -234,10 +262,17 @@
 							</li>
 						</ul>
 					</div>
+					<div class="index">
+						<ol>
+							<li>System Python (Mac, Linux)</li>
+							<li class="active">Official distribtion (python.org)</li>
+							<li>Scientific distributions (Anaconda, Enthought)</li>
+						</ol>
+					</div>
 				</section>
 				<section>
 					<h2>Scientific Python distributions</h2>
-					<p>Preferred and suggested method.</p>
+					<h3>Preferred and suggested</h3>
 					<div>
 						<ul>
 							<li>
@@ -261,6 +296,13 @@
 								<span style="text-align: center;">Commercial support available</span>
 							</li>
 						</ul>
+					</div>
+					<div class="index">
+						<ol>
+							<li>System Python (Mac, Linux)</li>
+							<li>Official distribtion (python.org)</li>
+							<li class="active">Scientific distributions (Anaconda, Enthought)</li>
+						</ol>
 					</div>
 				</section>
 			</div>
