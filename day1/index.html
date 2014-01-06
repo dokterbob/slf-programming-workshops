@@ -60,6 +60,7 @@
 						<ul>
 							<li>Introduction: physics, philosophy, +10 years experience from 14 y/o</li>
 							<li>Have had same problems, before</li>
+							<li>Named after Monty Python</li>
 						</ul>
 					</aside>
 				</section>
@@ -363,6 +364,7 @@
 						<li>Hit <code>&lt;TAB&gt;</code> for automatic completion</li>
 						<li>Use the ↑ and ↓ keys for command history</li>
 						<li>Use <code>&lt;CONTROL-D&gt;</code> to quit a shell (works for Python as well)</li>
+						<li><em>HELP!?</em><br><code>&lt;command&gt; --help</code><br> e.g.: <code>ls --help</code></li>
 					</ul>
 				</section>
 
@@ -591,9 +593,10 @@ Exiting Debugger.
 				<section>
 					<h2>PIP; Python package manager</h2>
 					<h3>Search, download, install and upgrade packages</h3>
-					<pre><code data-trim class="bash">$ pip search ipython</pre></code>
-					<pre><code data-trim class="bash">$ pip install --upgrade ipython</pre></code>
-					<pre><code data-trim class="bash">$ pip uninstall ipython</pre></code>
+					<pre><code data-trim class="bash">$ pip search &lt;package&gt;</pre></code>
+					<pre><code data-trim class="bash">$ pip install &lt;package&gt;</pre></code>
+					<pre><code data-trim class="bash">$ pip install --upgrade &lt;package&gt;</pre></code>
+					<pre><code data-trim class="bash">$ pip uninstall &lt;package&gt;</pre></code>
 				</section>
 
 				<section>
@@ -613,8 +616,8 @@ Exiting Debugger.
 					<h3>Usage</h3>
 					<p>Install VirtualEnv (only once):</p>
 					<pre><code data-trim class="bash">$ pip install virtualenv</pre></code>
-					<p>Create an environment:</p>
-					<pre><code data-trim class="bash">$ virtualenv &lt;dirname&gt;</pre></code>
+					<p>Create an isolated environment:</p>
+					<pre><code data-trim class="bash">$ virtualenv [--system-site-packages] &lt;dirname&gt;</pre></code>
 					<p>Activate the environment:</p>
 					<pre><code data-trim class="bash">$ source &lt;dirname&gt;/bin/activate</pre></code>
 					<p>Deactivate the environment:</p>
@@ -712,8 +715,12 @@ ImportError: No module named xmodem
 						<li>Trailing whitespace</li>
 						<li>Tabs; use 4 spaces instead</li>
 						<li>Trailing newlines</li>
-						<li>And...</li>
 					</ul>
+				</section>
+
+				<section>
+					<h2>Example</h2>
+					<img src="images/newlines.png">
 				</section>
 
 				<section>
