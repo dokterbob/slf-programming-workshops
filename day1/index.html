@@ -58,6 +58,12 @@
 					</div>
 				</section>
 				<section>
+					<h2>Available online</h2>
+					<h3>Feel free to click along!</h3>
+					<img src="" alt="Lecture URL QRCode">
+					<h3>http://.....</h3>
+				</section>
+				<section>
 					<h2>Python/programming workshop</h2>
 					<div style="padding-bottom: 1em;">Three days, three lectures</div>
 					<div>
@@ -74,7 +80,7 @@
 					<ul>
 						<li>One year general programming experience</li>
 						<li>Basic understanding of Python</li>
-						<li>Basic usage of terminal commands</li>
+						<li>Opening a terminal, executing commands</li>
 					</ul>
 				</section>
 				<section>
@@ -311,7 +317,7 @@
 					<h3>Common concepts</h3>
 					<ul>
 						<li>Execution search path — <code>$PATH</code></li>
-						<li>Home directory — <code>$HOME</code></li>
+						<li>Home directory — <code>$HOME</code>, <code>~</code></li>
 						<li>Current working directory (CWD) — <code>$PWD</code></li>
 						<li>Standard input, error and output (<code>stdin</code>, <code>stderr</code>, <code>stdout</code>)</li>
 						<li>Shell scripts (<code>.sh</code> files)</li>
@@ -328,6 +334,58 @@
 						<li><code>man &lt;command&gt;</code> — manual for command</li>
 						<li><code>echo "Text $VARIABLE"</code> — print to <code>stdout</code> </li>
 						<li><code>apropos &lt;topic&gt;</code> — search man pages</li>
+						<li><code>export PATH=~/bin:$PATH</code> — set PATH variable</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Scripts</h2>
+					<h3>“One damn thing after another”</h3>
+					<pre><code data-trim>
+#!/bin/sh
+# This first line tells the system it's a shell script.
+# Similarly, #!/bin/usr/python would execute Python code.
+
+# Print hello world
+echo "Hello world"
+
+# Print $PATH variable
+echo "My PATH variable is $PATH"
+
+# Change into some-directory
+cd some-directory
+
+# List directory contents
+ls
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Scripts</h2>
+					<h3>Having your script and executing it too</h3>
+					<pre><code data-trim>
+# Set executable permissions
+chmod +x myscript.sh
+
+# Executing command outside of $PATH requires explicit path
+./myscript.sh
+</code></pre>
+				</section>
+
+				<section>
+					<h2>Shell initialization</h2>
+					<p><code>~/.bash_profile</code> (and <code>~/.bashrc</code>)</p>
+					<ul>
+						<li>Executed whenever a terminal is started</li>
+						<li>Configures environment variables such as:
+							<ul>
+								<li><code>$PATH</code></li>
+								<li><code>$PYTHONPATH</code></li>
+								<li><code>$EDITOR</code></li>
+							</ul>
+						</li>
+						<li>Sets personal program settings</li>
+						<li>Executes arbitrary shell code</li>
 					</ul>
 				</section>
 
