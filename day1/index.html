@@ -459,6 +459,89 @@ In [1]:
 					</ul>
 				</section>
 
+				<section>
+					<h2>ipdb</h2>
+					<h3>Interactive debugging</h3>
+					<p>Debugging with IPython-like interface; stop your code anywhere and query variables or execute arbitrary code.</p>
+					<p>One line to rule them all:</p>
+					<pre><code data-trim>import ipdb; ipdb.set_trace()</code></pre>
+				</section>
+
+				<section>
+					<h2>ipdb</h2>
+					<h3>Important commands</h3>
+					<ul>
+						<li><code>n</code> — Execute next line of code</li>
+						<li><code>s</code> — Step info function call</li>
+						<li><code>c</code> — Continue execution as normal</li>
+						<li><code>q</code> — Quit debugger</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>ipdb example</h2>
+					<p>Code:</p>
+					<pre><code data-trim>
+def addition(one, other):
+    import ipdb; ipdb.set_trace()
+
+    print 'Calculating now'
+
+    return one + other
+
+print 'Starting calculation'
+addition(2, 5)
+
+print 'Calculation done'
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>ipdb example</h2>
+					<p>Result:</p>
+					<pre><code data-trim>
+drbob@swordfish ~ $ python ipdb-example.py
+Starting calculation
+> ipdb-example.py(4)addition()
+      3
+----> 4     print 'Calculating now'
+      5
+
+ipdb> n
+Calculating now
+> ipdb-example.py(6)addition()
+      5
+----> 6     return one + other
+      7
+
+ipdb> n
+--Return--
+7
+> ipdb-example.py(6)addition()
+      5
+----> 6     return one + other
+      7
+
+ipdb> n
+> ipdb-example.py(11)&lt;module&gt;()
+      9 addition(2, 5)
+     10
+---> 11 print 'Calculation done'
+
+ipdb> n
+Calculation done
+--Return--
+None
+> ipdb-example.py(11)&lt;module&gt;()
+      9 addition(2, 5)
+     10
+---> 11 print 'Calculation done'
+
+ipdb> quit
+Exiting Debugger.
+					</code></pre>
+				</section>
+
 			</div>
 
 		</div>
