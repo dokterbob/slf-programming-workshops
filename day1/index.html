@@ -369,7 +369,7 @@
 				<section>
 					<h2>Scripts</h2>
 					<h3>“One damn thing after another”</h3>
-					<pre><code data-trim>
+					<pre><code data-trim class="bash">
 #!/bin/sh
 # This first line tells the system it's a shell script.
 # Similarly, #!/bin/usr/python would execute Python code.
@@ -391,7 +391,7 @@ ls
 				<section>
 					<h2>Scripts</h2>
 					<h3>Having your script and executing it too</h3>
-					<pre><code data-trim>
+					<pre><code data-trim class="bash">
 # Set executable permissions
 chmod +x myscript.sh
 
@@ -436,7 +436,7 @@ chmod +x myscript.sh
 					<h2>Interactive Python shell</h2>
 					<p>Similar to bash shell: execute command, print output</p>
 					<pre><code data-trim>
-drbob@swordfish ~ $ python
+$ python
 Python 2.7.6 (v2.7.6:3a1db0d2747e, Nov 10 2013, 00:42:54)
 [GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
 Type "help", "copyright", "credits" or "license" for more information.
@@ -450,8 +450,8 @@ hello world
 					<h2>IPython</h2>
 					<h3>Python shell on steroids</h3>
 					<p>Similar to Mathematica</p>
-					<pre><code data-trim>
-drbob@swordfish ~ $ ipython
+					<pre><code data-trim class="python">
+$ ipython
 Python 2.7.6 (v2.7.6:3a1db0d2747e, Nov 10 2013, 00:42:54)
 Type "copyright", "credits" or "license" for more information.
 
@@ -481,7 +481,7 @@ In [1]:
 					<h3>Interactive debugging</h3>
 					<p>Debugging with IPython-like interface; stop your code anywhere and query variables or execute arbitrary code.</p>
 					<p>One line to rule them all:</p>
-					<pre><code data-trim>import ipdb; ipdb.set_trace()</code></pre>
+					<pre><code data-trim class="python">import ipdb; ipdb.set_trace()</code></pre>
 				</section>
 
 				<section>
@@ -516,8 +516,8 @@ print 'Calculation done'
 				<section>
 					<h2>ipdb example</h2>
 					<p>Result:</p>
-					<pre><code data-trim>
-drbob@swordfish ~ $ python ipdb-example.py
+					<pre><code data-trim class="python">
+$ python ipdb-example.py
 Starting calculation
 > ipdb-example.py(4)addition()
       3
@@ -578,7 +578,7 @@ Exiting Debugger.
 					<h2>Python packages a.k.a. Eggs</h2>
 					<p>Whenever you see <code>setup.py</code>, it's an Egg.</p>
 					<p>Install it through PIP (next slide) or with:
-						<pre><code data-trim>$ python setup.py install</pre></code>
+						<pre><code data-trim class="bash">$ python setup.py install</pre></code>
 					</p>
 				</section>
 
@@ -591,9 +591,9 @@ Exiting Debugger.
 				<section>
 					<h2>PIP; Python package manager</h2>
 					<h3>Search, download, install and upgrade packages</h3>
-					<pre><code data-trim>$ pip search ipython</pre></code>
-					<pre><code data-trim>$ pip install --upgrade ipython</pre></code>
-					<pre><code data-trim>$ pip uninstall ipython</pre></code>
+					<pre><code data-trim class="bash">$ pip search ipython</pre></code>
+					<pre><code data-trim class="bash">$ pip install --upgrade ipython</pre></code>
+					<pre><code data-trim class="bash">$ pip uninstall ipython</pre></code>
 				</section>
 
 				<section>
@@ -612,19 +612,19 @@ Exiting Debugger.
 					<h2>VirtualEnv</h2>
 					<h3>Usage</h3>
 					<p>Install VirtualEnv (only once):</p>
-					<pre><code data-trim>$ pip install virtualenv</pre></code>
+					<pre><code data-trim class="bash">$ pip install virtualenv</pre></code>
 					<p>Create an environment:</p>
-					<pre><code data-trim>$ virtualenv &lt;dirname&gt;</pre></code>
+					<pre><code data-trim class="bash">$ virtualenv &lt;dirname&gt;</pre></code>
 					<p>Activate the environment:</p>
-					<pre><code data-trim>$ source &lt;dirname&gt;/bin/activate</pre></code>
+					<pre><code data-trim class="bash">$ source &lt;dirname&gt;/bin/activate</pre></code>
 					<p>Deactivate the environment:</p>
-					<pre><code data-trim>$ deactivate</pre></code>
+					<pre><code data-trim class="bash">$ deactivate</pre></code>
 				</section>
 
 				<section>
 					<h2>VirtualEnv</h2>
 					<h3>Example (1/4)</h3>
-					<pre><code data-trim>
+					<pre><code data-trim class="python">
 $ python
 Python 2.7.6 (v2.7.6:3a1db0d2747e, Nov 10 2013, 00:42:54)
 [GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
@@ -639,7 +639,7 @@ ImportError: No module named xmodem
 				<section>
 					<h2>VirtualEnv</h2>
 					<h3>Example (2/4)</h3>
-					<pre><code data-trim>
+					<pre><code data-trim class="bash">
 $ virtualenv test
 New python executable in test/bin/python
 Installing Setuptools..............................................................................................................................................................................................................................done.
@@ -662,7 +662,7 @@ Cleaning up...
 				<section>
 					<h2>VirtualEnv</h2>
 					<h3>Example (3/4)</h3>
-					<pre><code data-trim>
+					<pre><code data-trim class="python">
 (test) $ python
 Python 2.7.6 (v2.7.6:3a1db0d2747e, Nov 10 2013, 00:42:54)
 [GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
@@ -675,7 +675,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 				<section>
 					<h2>VirtualEnv</h2>
 					<h3>Example (4/4)</h3>
-					<pre><code data-trim>
+					<pre><code data-trim class="python">
 (test) $ deactivate
 $ python
 Python 2.7.6 (v2.7.6:3a1db0d2747e, Nov 10 2013, 00:42:54)
