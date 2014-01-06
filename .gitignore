@@ -3,4 +3,6 @@
 log/*.log
 tmp/**
 node_modules/
-.sass-cache
+.sass-cacheprogram/*.log
+program/*.aux
+program/*.log
