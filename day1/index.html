@@ -53,15 +53,15 @@
 						Lecture 1 of 3
 					</h2>
 					<div>
-						<div>Mathijs de Bruin, &nbsp;January 7, 2014</div>
+						<div>Mathijs de Bruin (mathijs@mathijsfietst.nl), &nbsp;January 7, 2014</div>
 						<div>The WSL Institute for Snow and Avalanche Research SLF</div>
 					</div>
 				</section>
 				<section>
 					<h2>Available online</h2>
 					<h3>Feel free to click along!</h3>
-					<img src="" alt="Lecture URL QRCode">
-					<h3>http://.....</h3>
+					<img src="images/qrcode.png" alt="Lecture URL QRCode">
+					<h3><a href="http://tinyurl.com/slf-python-day1">http://tinyurl.com/slf-python-day1</a></h3>
 				</section>
 				<section>
 					<h2>Python/programming workshop</h2>
@@ -556,8 +556,159 @@ Exiting Debugger.
 				</section>
 
 				<section>
-					<h2>Python packages</h2>
+					<h2>Python packages a.k.a. Eggs</h2>
+					<p>Whenever you see <code>setup.py</code>, it's an Egg.</p>
+					<p>Install it through PIP (next slide) or with:
+						<pre><code data-trim>$ python setup.py install</pre></code>
+					</p>
+				</section>
 
+				<section data-background-image="images/cheese_shop.jpg" class="dropshadow">
+					<h2>PyPI a.k.a. The Cheese Shop</h2>
+					<h3><a href="https://pypi.python.org/">https://pypi.python.org/</a></h3>
+					<p>Lot's and lot's of Eggs. <em>Probably</em> someone just solved <em>your</em> problem. In Iran. Or down the hallway.</p>
+				</section>
+
+				<section>
+					<h2>PIP; Python package manager</h2>
+					<h3>Search, download, install and upgrade packages</h3>
+					<pre><code data-trim>$ pip search ipython</pre></code>
+					<pre><code data-trim>$ pip install --upgrade ipython</pre></code>
+					<pre><code data-trim>$ pip uninstall ipython</pre></code>
+				</section>
+
+				<section>
+					<h2>VirtualEnv</h2>
+					<h3>Keeping things clean</h3>
+					<p>Sets up a 'local' Python distribution allowing you to:
+						<ul>
+							<li>Install different versions of packages</li>
+							<li>Exclude system packages (unless explicitly included)</li>
+							<li>Install packages without administrator privileges</li>
+						</ul>
+					</p>
+				</section>
+
+				<section>
+					<h2>VirtualEnv</h2>
+					<h3>Usage</h3>
+					<p>Install VirtualEnv (only once):</p>
+					<pre><code data-trim>$ pip install virtualenv</pre></code>
+					<p>Create an environment:</p>
+					<pre><code data-trim>$ virtualenv &lt;dirname&gt;</pre></code>
+					<p>Activate the environment:</p>
+					<pre><code data-trim>$ source &lt;dirname&gt;/bin/activate</pre></code>
+					<p>Deactivate the environment:</p>
+					<pre><code data-trim>$ deactivate</pre></code>
+				</section>
+
+				<section>
+					<h2>VirtualEnv</h2>
+					<h3>Example (1/4)</h3>
+					<pre><code data-trim>
+$ python
+Python 2.7.6 (v2.7.6:3a1db0d2747e, Nov 10 2013, 00:42:54)
+[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import xmodem
+Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+ImportError: No module named xmodem
+					</pre></code>
+				</section>
+
+				<section>
+					<h2>VirtualEnv</h2>
+					<h3>Example (2/4)</h3>
+					<pre><code data-trim>
+$ virtualenv test
+New python executable in test/bin/python
+Installing Setuptools..............................................................................................................................................................................................................................done.
+Installing Pip.....................................................................................................................................................................................................................................................................................................................................done.
+$ source test/bin/activate
+(test) $ pip install xmodem
+Downloading/unpacking xmodem
+  Downloading xmodem-0.3.2.tar.gz
+  Storing download in cache at ./.pip/download_cache/http%3A%2F%2Fpackages.crate-cdn.com%2F4%2Fe%2F5%2F7%2F4e57f3fadd1f3f043a23f1a87e9d36f944a21b552aabebcdb802154667396567%2Fxmodem-0.3.2.tar.gz
+  Running setup.py egg_info for package xmodem
+
+Installing collected packages: xmodem
+  Running setup.py install for xmodem
+
+Successfully installed xmodem
+Cleaning up...
+					</pre></code>
+				</section>
+
+				<section>
+					<h2>VirtualEnv</h2>
+					<h3>Example (3/4)</h3>
+					<pre><code data-trim>
+(test) $ python
+Python 2.7.6 (v2.7.6:3a1db0d2747e, Nov 10 2013, 00:42:54)
+[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import xmodem
+>>>
+					</pre></code>
+				</section>
+
+				<section>
+					<h2>VirtualEnv</h2>
+					<h3>Example (4/4)</h3>
+					<pre><code data-trim>
+(test) $ deactivate
+$ python
+Python 2.7.6 (v2.7.6:3a1db0d2747e, Nov 10 2013, 00:42:54)
+[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import xmodem
+Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+ImportError: No module named xmodem
+					</pre></code>
+				</section>
+
+				<section data-background-image="images/and_now_for_something_completely_different.gif">
+				</section>
+
+				<section>
+					<h2>Program - day 1</h2>
+					<div>
+						<ol>
+							<li>Introduction and overview</li>
+							<li>Inventarisation of common problems</li>
+							<li>Scientific Python distributions</li>
+							<li>Bash shell/Command Line Interface</li>
+							<li>Python shell, IPython, debugging</li>
+							<li>Installing and managing packages, PyPI</li>
+							<li class="active">Taming your text editor</li>
+						</ol>
+					</div>
+				</section>
+
+				<section>
+					<h2>Watch out for:</h2>
+					<ul>
+						<li>Trailing whitespace</li>
+						<li>Tabs; use 4 spaces instead</li>
+						<li>Trailing newlines</li>
+						<li>And...</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Syntax errors</h2>
+					<h3>Use a Linter</h3>
+					<p>
+						Find syntax, style and other errors <em>before</em> running your code:
+						less bugs, more productivity and <em>much</em> more beautiful code.
+					</p>
+				</section>
+
+				<section>
+					<h2>Thanks!</h2>
+					<h3>Any questions?</h3>
 				</section>
 
 			</div>
