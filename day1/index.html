@@ -76,11 +76,12 @@
 				</section>
 				<section>
 					<h2>Advanced programming</h2>
-					<h3>Required prior knowledge/experience</h3>
+					<h3>Required prior to workshop</h3>
 					<ul>
-						<li>One year general programming experience</li>
+						<li>One year of general programming experience</li>
 						<li>Basic understanding of Python</li>
-						<li>Opening a terminal, executing commands</li>
+						<li>Ability to start a terminal, execute commands</li>
+						<li>Installed Python distribution — preferably Enthought or Anaconda</li>
 					</ul>
 				</section>
 				<section>
@@ -281,9 +282,9 @@
 						</ol>
 					</div>
 				</section>
-				<section>
+				<section id="unix-shell">
 					<h2>The Terminal</h2>
-					<h3>More or less the same:</h3>
+					<h3>More or less equivalent:</h3>
 					<ul>
 						<li>Shell</li>
 						<li>Command Line Interface (CLI)</li>
@@ -339,6 +340,16 @@
 				</section>
 
 				<section>
+					<h2>UNIX shell</h2>
+					<h3>Handy tricks</h3>
+					<ul>
+						<li>Hit <code>&lt;TAB&gt;</code> for automatic completion</li>
+						<li>Use the ↑ and ↓ keys for command history</li>
+						<li>Use <code>&lt;CONTROL-D&gt;</code> to quit a shell (works for Python as well)</li>
+					</ul>
+				</section>
+
+				<section>
 					<h2>Scripts</h2>
 					<h3>“One damn thing after another”</h3>
 					<pre><code data-trim>
@@ -386,6 +397,65 @@ chmod +x myscript.sh
 						</li>
 						<li>Sets personal program settings</li>
 						<li>Executes arbitrary shell code</li>
+					</ul>
+				</section>
+
+				<section id="python-shell">
+					<h2>Program - day 1</h2>
+					<div>
+						<ol>
+							<li>Introduction and overview</li>
+							<li>Inventarisation of common problems</li>
+							<li>Scientific Python distributions</li>
+							<li>Bash shell/Command Line Interface</li>
+							<li class="active">Python shell, IPython, debugging</li>
+							<li>Installing and managing packages, PyPI</li>
+							<li>Taming your text editor</li>
+						</ol>
+					</div>
+				</section>
+
+				<section>
+					<h2>Interactive Python shell</h2>
+					<p>Similar to bash shell: execute command, print output</p>
+					<pre><code data-trim>
+drbob@swordfish ~ $ python
+Python 2.7.6 (v2.7.6:3a1db0d2747e, Nov 10 2013, 00:42:54)
+[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> print 'hello world'
+hello world
+>>> quit()
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>IPython</h2>
+					<h3>Python shell on steroids</h3>
+					<p>Similar to Mathematica</p>
+					<pre><code data-trim>
+drbob@swordfish ~ $ ipython
+Python 2.7.6 (v2.7.6:3a1db0d2747e, Nov 10 2013, 00:42:54)
+Type "copyright", "credits" or "license" for more information.
+
+IPython 1.1.0 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
+
+In [1]:
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>IPython features</h2>
+					<h3>Similar to <a href="#unix-shell">UNIX shell</a></h3>
+					<ul>
+						<li>Command line completion</li>
+						<li>History available</li>
+						<li>Syntax coloring</li>
+						<li>Much more, read the manual!</li>
 					</ul>
 				</section>
 
