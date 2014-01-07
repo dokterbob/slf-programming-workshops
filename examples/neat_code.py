@@ -13,7 +13,15 @@ To Public License, Version 2, as published by Sam Hocevar. See
 COPYING for more details.
 """
 
-import sys, argparse, os, re, logging, mimetypes, shutil, time, errno
+import sys
+import argparse
+import os
+import re
+import logging
+import mimetypes
+import shutil
+import errno
+
 from datetime import datetime, timedelta
 
 # Default logger
@@ -126,14 +134,7 @@ def main(argv=None):
     parser.add_argument('path', metavar='<pathname>', type=str)
     parser.add_argument('--dest', '-d', metavar='<dest>', type=str)
     parser.add_argument('--dry-run', '-n', help='Show what would have been done.', action='store_true')
-    parser.add_argument('--logging', '-l', help='Log level.', type=str, default='info', choices=('debug', 'info', 'warn', 'error'))
     args = parser.parse_args()
-
-    numeric_level = getattr(logging, args.logging.upper())
-    args = parser.parse_args()
-
-    # if not args.dest:
-    #     args.dest = args.path
 
     sort_files(args.path, args.dest or args.path, args.dry_run)
 
