@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>SLF Python/programming workshop - day 2</title>
+
+	<meta name="description" content="SLF Python/programming workshop - day 2">
+	<meta name="author" content="Mathijs de Bruin">
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="stylesheet" href="../css/reveal.min.css">
+	<link rel="stylesheet" href="../css/theme/default.css" id="theme">
+
+	<!-- For syntax highlighting -->
+	<link rel="stylesheet" href="../lib/css/zenburn.css">
+
+	<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+	<script>
+	document.write( '<link rel="stylesheet" href="../css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+	</script>
+
+	<!--[if lt IE 9]>
+	<script src="../lib/js/html5shiv.js"></script>
+	<![endif]-->
+
+	<style type="text/css">
+		.dropshadow h1, .dropshadow h2, .dropshadow h3, .dropshadow {
+			text-shadow: 0 0 10px #000;
+		}
+
+		.active {
+			color: yellow;
+		}
+	</style>
+
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<div class="slides">
+				<section data-background-image="images/montypython1.jpg" class="dropshadow">
+					<h1>
+						Python/programming
+					</h1>
+					<h2>
+						Lecture 2 of 3
+					</h2>
+					<div>
+						<div>Mathijs de Bruin (mathijs@mathijsfietst.nl), &nbsp;January 7, 2014</div>
+						<div>The WSL Institute for Snow and Avalanche Research SLF</div>
+					</div>
+				</section>
+
+				<section>
+					<h2>Available online</h2>
+					<h3>Feel free to click along!</h3>
+					<img src="images/qrcode.png" alt="Lecture URL QRCode">
+					<h3><a href="http://tinyurl.com/slf-python-day2">http://tinyurl.com/slf-python-day2</a></h3>
+				</section>
+
+				<section>
+					<h2>Program - day 2</h2>
+					<ol>
+						<li class="active">Typical gotchas; weak references, immutables</li>
+						<li>Best practises
+							<ul>
+								<li>Classes, methods and functions; use them!</li>
+								<li>Code formatting; PEP8</li>
+								<li>Don’t repeat yourself; DRY</li>
+								<li>Organizing your code; minimize globals, cleanout imports</li>
+								<li>Comments, Docstrings: documentation</li>
+							</ul>
+						</li>
+						<li>Structuring code, working with modules</li>
+						<li>Packaging, creating reusable code</li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>Thanks!</h2>
+					<h3>Any questions?</h3>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="../lib/js/head.min.js"></script>
+		<script src="../js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+				// transitionSpeed: 'slow',
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+				{ src: '../lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+				{ src: '../plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+				{ src: '../plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+	</body>
+</html>
