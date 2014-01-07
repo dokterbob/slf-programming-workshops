@@ -238,6 +238,222 @@ after, outer_list = ['we', 'like', 'proper', 'English']									</code></pre>
 					</ol>
 				</section>
 
+				<section>
+					<h2>Grouping code</h2>
+					<h3>Classes, methods and functions</h3>
+					<ul>
+						<li>Isolating dependencies</li>
+						<li>Reducing scope</li>
+					</ul>
+					<h3 style="padding-top: 1em;">Leads to</h3>
+					<ul>
+						<li>More oversight</li>
+						<li>Increased simplicity</li>
+						<li>Less bugs</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Functions</h2>
+					<h3>When there's a simple input ➞ output relation</h3>
+					<pre><code data-trim>
+import random
+
+def random_integer(start, end=15):
+	"""
+	Return a random integer between start and end,
+	the default end being 15.
+	"""
+	print 'Returning integer between %d and %d' % (start, end)
+
+	result = random.randint(start, end)
+
+	return result
+					</code></pre>
+					<pre><code data-trim class="python">
+>>> random_integer(5)
+Returning integer between 5 and 15
+6
+>>> random_integer(5, 5)
+Returning integer between 5 and 5
+5
+>>> # Optionally: name parameters
+>>> random_integer(start=5, end=5)
+Returning integer between 5 and 5
+5
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Classes</h2>
+					<h3>Grouping functions 'methods' around objects</h3>
+					<pre><code data-trim>
+class Food(object):
+    """ Something you can eat. """
+
+    # Class properties are shared across instances
+    destination = 'mouth'
+
+    def __init__(self, name):
+        """
+        The initialization method is called whenever
+        instances are created.
+        """
+        # Store the name property on the object
+        self.name = name
+
+        # Create the object unused
+        self.used = False
+
+    def use(self):
+        """ Use this particular item, marking it as used. """
+
+        print 'Using %s in %s' % (self.name, self.destination)
+
+        # Instance properties are specific to one instance
+        self.used = True
+					</code></pre>
+
+					<p>For similar types of data and related behaviour.</p>
+				</section>
+
+				<section>
+					<h2>Classes</h2>
+					<h3>Creating food, and using it too</h3>
+					<pre><code data-trim class="python">
+>>> lunch = Food(name='banana')
+>>> lunch.used
+False
+>>> lunch.use()
+Using banana in mouth
+>>> lunch.used
+True
+					</code></pre>
+				</section>
+
+				<section id="pep8">
+					<h2><a href="http://www.python.org/dev/peps/pep-0008/">PEP8</a></h2>
+					<h3>Official Python Style Guide</h3>
+					<p>Because code is read more than it is written.</p>
+				</section>
+
+				<section>
+					<h2>PEP8</h2>
+					<h3>Indentation</h3>
+					<p>Four (4) spaces, no tabs!</p>
+					<pre><code data-trim class="python">
+if sugar == sweet:
+    # Note: there's spaces here!
+    print 'Better go to the dentist!'
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>PEP8</h2>
+					<h3>Line length</h3>
+					<p>79 characters on a single line</p>
+					<pre><code data-trim class="python">
+print (
+	'When longer lines are required, simply use ()\'s for concatenation '
+	'but watch out with tuples!'
+)
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>PEP8</h2>
+					<h3>Imports</h3>
+					<ul>
+						<li>Always in the top of a file</li>
+						<li>
+							Import statements on their own line, <strong>not</strong>:
+							<pre><code class="python">import os, sys</code></pre>
+						</li>
+						<li>
+							Avoid wildcard imports:
+							<pre><code class="python">from mountain import *</code></pre>
+						</li>
+						<li>
+							Group in order:
+							<ol>
+								<li>Python standard library imports</li>
+								<li>Third party imports</li>
+								<li>'Local' project imports</li>
+							</ol>
+						</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>PEP8</h2>
+					<h3>Imports; example</h3>
+					<p>From more fundamental to less fundamental.</p>
+							<pre><code class="python" data-trim>
+import os
+import sys
+
+# Numpy is more fundamental than matlab
+import numpy
+
+# Group utils with the same base together
+from matlab import polyplot, somethingelse
+from matlab.utils import UselessUtilClass
+
+# '.' imports from local directory (module)
+from .utils import FunkyPlotHelper
+							</code></pre>
+				</section>
+
+				<section>
+					<h2>PEP8</h2>
+					<h3>Whitespace</h3>
+					<p>Required and forbidden whitespace.</p>
+
+					<pre><code class="python" data-trim>
+# Like this
+my_dict = {
+	'key': 'value',
+	'otherkey': 'othervalue'
+}
+value = value + 5
+do_something(1, 2, 3)
+spam(ham[1], {eggs: 2})
+
+# Not like this
+my_dict = {'key' : 'value' , 'otherkey': 'othervalue'}
+value=value+5
+do_something(1   ,  2 ,   3 )
+spam( ham[ 1 ], { eggs: 2 } )
+					</code></pre>
+					<p>Refer to <a href="http://www.python.org/dev/peps/pep-0008/#whitespace-in-expressions-and-statements">PEP8</a></p>
+				</section>
+
+				<section>
+					<h2>PEP8</h2>
+					<h3>Comments</h3>
+					<p>Write for reading!</p>
+
+					<pre><code class="python" data-trim>
+def my_function():
+    """ What does it do, what does it return? """
+
+    # Note: empty functions require a 'pass' statement
+    pass
+
+def other_function():
+    """
+    This text is a bit longer so it needs to be spread over
+    multiple lines. Note that the quotes are on a line by themselves.
+    """
+
+    # Now doing something useful
+    x = do_something_useful()
+
+    # Use inline comments sparingly
+    x = x + 1 # Don't do this
+					</code></pre>
+				</section>
+
 				<!-- Structuring code -->
 				<section id="structuring-code">
 					<h2>Program - day 2</h2>
