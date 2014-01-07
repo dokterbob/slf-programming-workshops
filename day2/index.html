@@ -2,115 +2,115 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
 
-	<title>SLF Python/programming workshop - day 2</title>
+    <title>SLF Python/programming workshop - day 2</title>
 
-	<meta name="description" content="SLF Python/programming workshop - day 2">
-	<meta name="author" content="Mathijs de Bruin">
+    <meta name="description" content="SLF Python/programming workshop - day 2">
+    <meta name="author" content="Mathijs de Bruin">
 
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	<link rel="stylesheet" href="../css/reveal.min.css">
-	<link rel="stylesheet" href="../css/theme/default.css" id="theme">
+    <link rel="stylesheet" href="../css/reveal.min.css">
+    <link rel="stylesheet" href="../css/theme/default.css" id="theme">
 
-	<!-- For syntax highlighting -->
-	<link rel="stylesheet" href="../lib/css/zenburn.css">
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="../lib/css/zenburn.css">
 
-	<!-- If the query includes 'print-pdf', use the PDF print sheet -->
-	<script>
-	document.write( '<link rel="stylesheet" href="../css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-	</script>
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+    document.write( '<link rel="stylesheet" href="../css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
 
-	<!--[if lt IE 9]>
-	<script src="../lib/js/html5shiv.js"></script>
-	<![endif]-->
+    <!--[if lt IE 9]>
+    <script src="../lib/js/html5shiv.js"></script>
+    <![endif]-->
 
-	<style type="text/css">
-		.dropshadow h1, .dropshadow h2, .dropshadow h3, .dropshadow {
-			text-shadow: 0 0 10px #000;
-		}
+    <style type="text/css">
+        .dropshadow h1, .dropshadow h2, .dropshadow h3, .dropshadow {
+            text-shadow: 0 0 10px #000;
+        }
 
-		.active {
-			color: yellow;
-		}
-	</style>
+        .active {
+            color: yellow;
+        }
+    </style>
 
-	</head>
+    </head>
 
-	<body>
+    <body>
 
-		<div class="reveal">
-			<div class="slides">
-				<section data-background-image="images/montypython1.jpg" class="dropshadow">
-					<h1>
-						Python/programming
-					</h1>
-					<h2>
-						Lecture 2 of 3
-					</h2>
-					<div>
-						<div>Mathijs de Bruin (mathijs@mathijsfietst.nl), &nbsp;January 7, 2014</div>
-						<div>The WSL Institute for Snow and Avalanche Research SLF</div>
-					</div>
-				</section>
+        <div class="reveal">
+            <div class="slides">
+                <section data-background-image="images/montypython1.jpg" class="dropshadow">
+                    <h1>
+                        Python/programming
+                    </h1>
+                    <h2>
+                        Lecture 2 of 3
+                    </h2>
+                    <div>
+                        <div>Mathijs de Bruin (mathijs@mathijsfietst.nl), &nbsp;January 7, 2014</div>
+                        <div>The WSL Institute for Snow and Avalanche Research SLF</div>
+                    </div>
+                </section>
 
-				<section>
-					<h2>Available online</h2>
-					<h3>Feel free to click along!</h3>
-					<img src="images/qrcode.png" alt="Lecture URL QRCode">
-					<h3><a href="http://tinyurl.com/slf-python-day2">http://tinyurl.com/slf-python-day2</a></h3>
-				</section>
+                <section>
+                    <h2>Available online</h2>
+                    <h3>Feel free to click along!</h3>
+                    <img src="images/qrcode.png" alt="Lecture URL QRCode">
+                    <h3><a href="http://tinyurl.com/slf-python-day2">http://tinyurl.com/slf-python-day2</a></h3>
+                </section>
 
-				<!-- Gotchas -->
-				<section id="gotchas">
-					<h2>Program - day 2</h2>
-					<ol>
-						<li class="active">Typical gotchas; references, immutables</li>
-						<li>Best practises
-							<ul>
-								<li>Classes, methods and functions; use them!</li>
-								<li>Code formatting; PEP8</li>
-								<li>Don’t repeat yourself; DRY</li>
-								<li>Organizing your code; minimize globals, cleanout imports</li>
-								<li>Comments, Docstrings: documentation</li>
-							</ul>
-						</li>
-						<li>Structuring code, working with modules</li>
-						<li>Packaging, creating reusable code</li>
-					</ol>
-				</section>
+                <!-- Gotchas -->
+                <section id="gotchas">
+                    <h2>Program - day 2</h2>
+                    <ol>
+                        <li class="active">Typical gotchas; references, immutables</li>
+                        <li>Best practises
+                            <ul>
+                                <li>Classes, methods and functions; use them!</li>
+                                <li>Code formatting; PEP8</li>
+                                <li>Don’t repeat yourself; DRY</li>
+                                <li>Organizing your code; minimize globals, cleanout imports</li>
+                                <li>Comments, Docstrings: documentation</li>
+                            </ul>
+                        </li>
+                        <li>Structuring code, working with modules</li>
+                        <li>Packaging, creating reusable code</li>
+                    </ol>
+                </section>
 
-				<section id="immutable-types">
-					<h2>Mutable and immutable types</h2>
-					<h3>Quite simple</h3>
-					<ul style="padding-bottom: 1em;">
-						<li>
-							Mutable types can be changed
-						</li>
-						<li>
-							Immutable types cannot
-						</li>
-					</ul>
-					<h3>But: there's a <strong>catch</strong>.</h3>
-				</section>
+                <section id="immutable-types">
+                    <h2>Mutable and immutable types</h2>
+                    <h3>Quite simple</h3>
+                    <ul style="padding-bottom: 1em;">
+                        <li>
+                            Mutable types can be changed
+                        </li>
+                        <li>
+                            Immutable types cannot
+                        </li>
+                    </ul>
+                    <h3>But: there's a <strong>catch</strong>.</h3>
+                </section>
 
-				<section>
-					<h2>Mutable types</h2>
-					<ul>
-						<li>Lists: <pre><code class="python">[1, 2, 3] </code></pre></li>
-						<li>Dictionaries: <pre><code>{'key': 'value'}</code></pre></li>
-						<li>Sets: <pre><code class="python">set([1,2,3])</code></pre></li>
-					</ul>
-				</section>
+                <section>
+                    <h2>Mutable types</h2>
+                    <ul>
+                        <li>Lists: <pre><code class="python">[1, 2, 3] </code></pre></li>
+                        <li>Dictionaries: <pre><code>{'key': 'value'}</code></pre></li>
+                        <li>Sets: <pre><code class="python">set([1,2,3])</code></pre></li>
+                    </ul>
+                </section>
 
-				<section>
-					<h2>Mutable types</h2>
-					<h3>Example</h3>
-					<pre><code class="python" data-trim>
+                <section>
+                    <h2>Mutable types</h2>
+                    <h3>Example</h3>
+                    <pre><code class="python" data-trim>
 >>> # Create a list and a second reference to it
 >>> ls = [1, 2, 3]
 >>> ls_copy = ls
@@ -127,22 +127,22 @@ True
 >>> # ls_copy still refers to the old list
 >>> ls == ls_copy
 False
-					</code></pre>
-				</section>
+                    </code></pre>
+                </section>
 
-				<section>
-					<h2>Immutable types</h2>
-					<ul>
-						<li>Strings: <pre><code>'blah'</code></pre></li>
-						<li>Tuples: <pre><code>(1, 2, 3)</code></pre></li>
-						<li>Frozen sets: <pre><code class="python">frozenset([1, 2,3 ])</code></pre></li>
-					</ul>
-				</section>
+                <section>
+                    <h2>Immutable types</h2>
+                    <ul>
+                        <li>Strings: <pre><code>'blah'</code></pre></li>
+                        <li>Tuples: <pre><code>(1, 2, 3)</code></pre></li>
+                        <li>Frozen sets: <pre><code class="python">frozenset([1, 2,3 ])</code></pre></li>
+                    </ul>
+                </section>
 
-				<section>
-					<h2>Immutable types</h2>
-					<h3>Example</h3>
-					<pre><code class="python" data-trim>
+                <section>
+                    <h2>Immutable types</h2>
+                    <h3>Example</h3>
+                    <pre><code class="python" data-trim>
 >>> bikini_string = 'pink'
 >>> marble_string = bikini_string
 >>> # This creates a new object
@@ -152,19 +152,19 @@ False
 'pink green'
 >>> marble_string
 'pink'
-					</code></pre>
-				</section>
+                    </code></pre>
+                </section>
 
-				<section id="object-references">
-					<h2>Object References</h2>
-					<p>Actually, variables are <em>references</em> to objects.</p>
-				</section>
+                <section id="object-references">
+                    <h2>Object References</h2>
+                    <p>Actually, variables are <em>references</em> to objects.</p>
+                </section>
 
-				<section>
-					<h2>Object References</h2>
-					<p><em>References</em> are passed in arguments to functions and methods - <em>not</em> objects or variables.</p>
+                <section>
+                    <h2>Object References</h2>
+                    <p><em>References</em> are passed in arguments to functions and methods - <em>not</em> objects or variables.</p>
 
-					<pre><code data-trim class="python">
+                    <pre><code data-trim class="python">
 def try_to_change_list_contents(the_list):
     print 'got', the_list
     the_list.append('four')
@@ -175,29 +175,29 @@ outer_list = ['one', 'two', 'three']
 print 'before, outer_list =', outer_list
 try_to_change_list_contents(outer_list)
 print 'after, outer_list =', outer_list
-					</code></pre>
+                    </code></pre>
 
-					<p style="font-size: 70%">Credits: Blair Conrad on <a href="http://stackoverflow.com/a/986145">StackOverflow</a></p>
-				</section>
+                    <p style="font-size: 70%">Credits: Blair Conrad on <a href="http://stackoverflow.com/a/986145">StackOverflow</a></p>
+                </section>
 
-				<section>
-					<h2>Object References</h2>
-					<p>Consequence: <em>mutable</em> objects <em>can</em> be modified from within methods and functions.</p>
+                <section>
+                    <h2>Object References</h2>
+                    <p>Consequence: <em>mutable</em> objects <em>can</em> be modified from within methods and functions.</p>
 
-					<pre><code data-trim class="python">
+                    <pre><code data-trim class="python">
 before, outer_list = ['one', 'two', 'three']
 got ['one', 'two', 'three']
 changed to ['one', 'two', 'three', 'four']
 after, outer_list = ['one', 'two', 'three', 'four']
-					</code></pre>
+                    </code></pre>
 
-				</section>
+                </section>
 
-				<section>
-					<h2>Object References</h2>
-					<h3>However</h3>
-					<p>Reassigning objects replaces the references so:</p>
-					<pre><code data-trim class="python">
+                <section>
+                    <h2>Object References</h2>
+                    <h3>However</h3>
+                    <p>Reassigning objects replaces the references so:</p>
+                    <pre><code data-trim class="python">
 def try_to_change_list_reference(the_list):
     print 'got', the_list
     the_list = ['and', 'we', 'can', 'not', 'lie']
@@ -208,69 +208,69 @@ outer_list = ['we', 'like', 'proper', 'English']
 print 'before, outer_list =', outer_list
 try_to_change_list_reference(outer_list)
 print 'after, outer_list =', outer_list
-					</code></pre>
+                    </code></pre>
 
-					<p>Yields:</p>
-					<pre><code data-trim class="python">
+                    <p>Yields:</p>
+                    <pre><code data-trim class="python">
 before, outer_list = ['we', 'like', 'proper', 'English']
 got ['we', 'like', 'proper', 'English']
 set to ['and', 'we', 'can', 'not', 'lie']
-after, outer_list = ['we', 'like', 'proper', 'English']									</code></pre>
+after, outer_list = ['we', 'like', 'proper', 'English']                                 </code></pre>
 
-				</section>
+                </section>
 
-				<!-- Best practises -->
-				<section id="best-practises">
-					<h2>Program - day 2</h2>
-					<ol>
-						<li>Typical gotchas; references, immutables</li>
-						<li><span class="active">Best practises</span>
-							<ul>
-								<li>Classes, methods and functions; use them!</li>
-								<li>Code formatting; PEP8</li>
-								<li>Don’t repeat yourself; DRY</li>
-								<li>Organizing your code; minimize globals, cleanout imports</li>
-								<li>Comments, Docstrings: documentation</li>
-							</ul>
-						</li>
-						<li>Structuring code, working with modules</li>
-						<li>Packaging, creating reusable code</li>
-					</ol>
-				</section>
+                <!-- Best practises -->
+                <section id="best-practises">
+                    <h2>Program - day 2</h2>
+                    <ol>
+                        <li>Typical gotchas; references, immutables</li>
+                        <li><span class="active">Best practises</span>
+                            <ul>
+                                <li>Classes, methods and functions; use them!</li>
+                                <li>Code formatting; PEP8</li>
+                                <li>Don’t repeat yourself; DRY</li>
+                                <li>Organizing your code; minimize globals, cleanout imports</li>
+                                <li>Comments, Docstrings: documentation</li>
+                            </ul>
+                        </li>
+                        <li>Structuring code, working with modules</li>
+                        <li>Packaging, creating reusable code</li>
+                    </ol>
+                </section>
 
-				<section>
-					<h2>Grouping code</h2>
-					<h3>Classes, methods and functions</h3>
-					<ul>
-						<li>Isolating dependencies</li>
-						<li>Reducing scope</li>
-					</ul>
-					<h3 style="padding-top: 1em;">Leads to</h3>
-					<ul>
-						<li>More oversight</li>
-						<li>Increased simplicity</li>
-						<li>Less bugs</li>
-					</ul>
-				</section>
+                <section>
+                    <h2>Grouping code</h2>
+                    <h3>Classes, methods and functions</h3>
+                    <ul>
+                        <li>Isolating dependencies</li>
+                        <li>Reducing scope</li>
+                    </ul>
+                    <h3 style="padding-top: 1em;">Leads to</h3>
+                    <ul>
+                        <li>More oversight</li>
+                        <li>Increased simplicity</li>
+                        <li>Less bugs</li>
+                    </ul>
+                </section>
 
-				<section>
-					<h2>Functions</h2>
-					<h3>When there's a simple input ➞ output relation</h3>
-					<pre><code data-trim>
+                <section>
+                    <h2>Functions</h2>
+                    <h3>When there's a simple input ➞ output relation</h3>
+                    <pre><code data-trim>
 import random
 
 def random_integer(start, end=15):
-	"""
-	Return a random integer between start and end,
-	the default end being 15.
-	"""
-	print 'Returning integer between %d and %d' % (start, end)
+    """
+    Return a random integer between start and end,
+    the default end being 15.
+    """
+    print 'Returning integer between %d and %d' % (start, end)
 
-	result = random.randint(start, end)
+    result = random.randint(start, end)
 
-	return result
-					</code></pre>
-					<pre><code data-trim class="python">
+    return result
+                    </code></pre>
+                    <pre><code data-trim class="python">
 >>> random_integer(5)
 Returning integer between 5 and 15
 6
@@ -281,13 +281,13 @@ Returning integer between 5 and 5
 >>> random_integer(start=5, end=5)
 Returning integer between 5 and 5
 5
-					</code></pre>
-				</section>
+                    </code></pre>
+                </section>
 
-				<section>
-					<h2>Classes</h2>
-					<h3>Grouping functions 'methods' around objects</h3>
-					<pre><code data-trim>
+                <section>
+                    <h2>Classes</h2>
+                    <h3>Grouping functions 'methods' around objects</h3>
+                    <pre><code data-trim>
 class Food(object):
     """ Something you can eat. """
 
@@ -312,15 +312,15 @@ class Food(object):
 
         # Instance properties are specific to one instance
         self.used = True
-					</code></pre>
+                    </code></pre>
 
-					<p>For similar types of data and related behaviour.</p>
-				</section>
+                    <p>For similar types of data and related behaviour.</p>
+                </section>
 
-				<section>
-					<h2>Classes</h2>
-					<h3>Creating food, and using it too</h3>
-					<pre><code data-trim class="python">
+                <section>
+                    <h2>Classes</h2>
+                    <h3>Creating food, and using it too</h3>
+                    <pre><code data-trim class="python">
 >>> lunch = Food(name='banana')
 >>> lunch.used
 False
@@ -328,67 +328,67 @@ False
 Using banana in mouth
 >>> lunch.used
 True
-					</code></pre>
-				</section>
+                    </code></pre>
+                </section>
 
-				<section id="pep8">
-					<h2><a href="http://www.python.org/dev/peps/pep-0008/">PEP8</a></h2>
-					<h3>Official Python Style Guide</h3>
-					<p>Because code is read more than it is written.</p>
-				</section>
+                <section id="pep8">
+                    <h2><a href="http://www.python.org/dev/peps/pep-0008/">PEP8</a></h2>
+                    <h3>Official Python Style Guide</h3>
+                    <p>Because code is read more than it is written.</p>
+                </section>
 
-				<section>
-					<h2>PEP8</h2>
-					<h3>Indentation</h3>
-					<p>Four (4) spaces, no tabs!</p>
-					<pre><code data-trim class="python">
+                <section>
+                    <h2>PEP8</h2>
+                    <h3>Indentation</h3>
+                    <p>Four (4) spaces, no tabs!</p>
+                    <pre><code data-trim class="python">
 if sugar == sweet:
     # Note: there's spaces here!
     print 'Better go to the dentist!'
-					</code></pre>
-				</section>
+                    </code></pre>
+                </section>
 
-				<section>
-					<h2>PEP8</h2>
-					<h3>Line length</h3>
-					<p>79 characters on a single line</p>
-					<pre><code data-trim class="python">
+                <section>
+                    <h2>PEP8</h2>
+                    <h3>Line length</h3>
+                    <p>79 characters on a single line</p>
+                    <pre><code data-trim class="python">
 print (
-	'When longer lines are required, simply use ()\'s for concatenation '
-	'but watch out with tuples!'
+    'When longer lines are required, simply use ()\'s for concatenation '
+    'but watch out with tuples!'
 )
-					</code></pre>
-				</section>
+                    </code></pre>
+                </section>
 
-				<section>
-					<h2>PEP8</h2>
-					<h3>Imports</h3>
-					<ul>
-						<li>Always in the top of a file</li>
-						<li>
-							Import statements on their own line, <strong>not</strong>:
-							<pre><code class="python">import os, sys</code></pre>
-						</li>
-						<li>
-							Avoid wildcard imports:
-							<pre><code class="python">from mountain import *</code></pre>
-						</li>
-						<li>
-							Group in order:
-							<ol>
-								<li>Python standard library imports</li>
-								<li>Third party imports</li>
-								<li>'Local' project imports</li>
-							</ol>
-						</li>
-					</ul>
-				</section>
+                <section>
+                    <h2>PEP8</h2>
+                    <h3>Imports</h3>
+                    <ul>
+                        <li>Always in the top of a file</li>
+                        <li>
+                            Import statements on their own line, <strong>not</strong>:
+                            <pre><code class="python">import os, sys</code></pre>
+                        </li>
+                        <li>
+                            Avoid wildcard imports:
+                            <pre><code class="python">from mountain import *</code></pre>
+                        </li>
+                        <li>
+                            Group in order:
+                            <ol>
+                                <li>Python standard library imports</li>
+                                <li>Third party imports</li>
+                                <li>'Local' project imports</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </section>
 
-				<section>
-					<h2>PEP8</h2>
-					<h3>Imports; example</h3>
-					<p>From more fundamental to less fundamental.</p>
-							<pre><code class="python" data-trim>
+                <section>
+                    <h2>PEP8</h2>
+                    <h3>Imports; example</h3>
+                    <p>From more fundamental to less fundamental.</p>
+                            <pre><code class="python" data-trim>
 import os
 import sys
 
@@ -401,19 +401,19 @@ from matlab.utils import UselessUtilClass
 
 # '.' imports from local directory (module)
 from .utils import FunkyPlotHelper
-							</code></pre>
-				</section>
+                            </code></pre>
+                </section>
 
-				<section>
-					<h2>PEP8</h2>
-					<h3>Whitespace</h3>
-					<p>Required and forbidden whitespace.</p>
+                <section>
+                    <h2>PEP8</h2>
+                    <h3>Whitespace</h3>
+                    <p>Required and forbidden whitespace.</p>
 
-					<pre><code class="python" data-trim>
+                    <pre><code class="python" data-trim>
 # Like this
 my_dict = {
-	'key': 'value',
-	'otherkey': 'othervalue'
+    'key': 'value',
+    'otherkey': 'othervalue'
 }
 value = value + 5
 do_something(1, 2, 3)
@@ -424,16 +424,16 @@ my_dict = {'key' : 'value' , 'otherkey': 'othervalue'}
 value=value+5
 do_something(1   ,  2 ,   3 )
 spam( ham[ 1 ], { eggs: 2 } )
-					</code></pre>
-					<p>Refer to <a href="http://www.python.org/dev/peps/pep-0008/#whitespace-in-expressions-and-statements">PEP8</a></p>
-				</section>
+                    </code></pre>
+                    <p>Refer to <a href="http://www.python.org/dev/peps/pep-0008/#whitespace-in-expressions-and-statements">PEP8</a></p>
+                </section>
 
-				<section>
-					<h2>PEP8</h2>
-					<h3>Comments</h3>
-					<p>Write for reading!</p>
+                <section>
+                    <h2>PEP8</h2>
+                    <h3>Comments</h3>
+                    <p>Write for reading!</p>
 
-					<pre><code class="python" data-trim>
+                    <pre><code class="python" data-trim>
 def my_function():
     """ What does it do, what does it return? """
 
@@ -451,89 +451,198 @@ def other_function():
 
     # Use inline comments sparingly
     x = x + 1 # Don't do this
-					</code></pre>
-				</section>
+                    </code></pre>
+                </section>
 
-				<!-- Structuring code -->
-				<section id="structuring-code">
-					<h2>Program - day 2</h2>
-					<ol>
-						<li>Typical gotchas; references, immutables</li>
-						<li>Best practises
-							<ul>
-								<li>Classes, methods and functions; use them!</li>
-								<li>Code formatting; PEP8</li>
-								<li>Don’t repeat yourself; DRY</li>
-								<li>Organizing your code; minimize globals, cleanout imports</li>
-								<li>Comments, Docstrings: documentation</li>
-							</ul>
-						</li>
-						<li class="active">Structuring code, working with modules</li>
-						<li>Packaging, creating reusable code</li>
-					</ol>
-				</section>
+                <section>
+                    <h2>PEP8</h2>
+                    <h3>Naming conventions</h3>
+                    <p>Go for descriptive!</p>
 
-				<!-- Packaging -->
-				<section id="packaging">
-					<h2>Program - day 2</h2>
-					<ol>
-						<li>Typical gotchas; references, immutables</li>
-						<li>Best practises
-							<ul>
-								<li>Classes, methods and functions; use them!</li>
-								<li>Code formatting; PEP8</li>
-								<li>Don’t repeat yourself; DRY</li>
-								<li>Organizing your code; minimize globals, cleanout imports</li>
-								<li>Comments, Docstrings: documentation</li>
-							</ul>
-						</li>
-						<li>Structuring code, working with modules</li>
-						<li class="active">Packaging, creating reusable code</li>
-					</ol>
-				</section>
+                    <pre><code class="python" data-trim>
+# Good
+max_value = 5
+min_value = 3
 
-				<section>
-					<h2>Thanks!</h2>
-					<h3>Any questions?</h3>
-				</section>
+class MyClass(object):
+    def square_number(self, n):
+        return n*n
 
-			</div>
+# Bad
+a = 5
+B = 3
 
-		</div>
+class my_Class(object):
+    def doit(n):
+        return n*n
+                    </pre></code>
+                </section>
 
-		<script src="../lib/js/head.min.js"></script>
-		<script src="../js/reveal.min.js"></script>
+                <section>
+                    <h2>PEP8</h2>
+                    <h3>Checks will lead the way!</h3>
+                    <pre><code data-trim class="bash">
+$ pip install pep8
+$ pep8 neat_code.py
+neat_code.py:59:80: E501 line too long (96 > 79 characters)
+neat_code.py:65:80: E501 line too long (90 > 79 characters)
+neat_code.py:82:80: E501 line too long (89 > 79 characters)
+neat_code.py:91:80: E501 line too long (80 > 79 characters)
+neat_code.py:103:80: E501 line too long (81 > 79 characters)
+neat_code.py:133:80: E501 line too long (113 > 79 characters)
+neat_code.py:136:80: E501 line too long (103 > 79 characters)
+                    </code></pre>
+                </section>
 
-		<script>
+                <section id="dry">
+                    <h2>DRY</h2>
+                    <h3>Don't Repeat Yourself</h3>
+                    <p>Don't do stuff more than twice.</p>
+                </section>
 
-			// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+                <section id="organizing">
+                    <h2>Organizing code</h2>
+                    <ul>
+                        <li>Write for reading</li>
+                        <li>Group functionality</li>
+                        <li>Limit globals</li>
+                        <li>Cleanout imports</li>
+                    </ul>
+                    <aside class="notes">
+                        <p>Show example from Quirine</p>
+                    </aside>
+                </section>
+
+                <section id="comments">
+                    <h2>Comments and Docstrings</h2>
+                    <h3>Care about your successors!</h3>
+                    <p>Be verbose, be <em>very</em> verbose!</p>
+                    <ul>
+                        <li>Explicit over implicit</li>
+                        <li>What does it do (in human language)?</li>
+                        <li>How do I use it?</li>
+                        <li>Examples, examples, examples!</li>
+                        <li>Ideal: <strong>1/3 comment/code ratio</strong></li>
+                    </ul>
+
+                </section>
+
+                <!-- Structuring code -->
+                <section id="structuring-code">
+                    <h2>Program - day 2</h2>
+                    <ol>
+                        <li>Typical gotchas; references, immutables</li>
+                        <li>Best practises
+                            <ul>
+                                <li>Classes, methods and functions; use them!</li>
+                                <li>Code formatting; PEP8</li>
+                                <li>Don’t repeat yourself; DRY</li>
+                                <li>Organizing your code; minimize globals, cleanout imports</li>
+                                <li>Comments, Docstrings: documentation</li>
+                            </ul>
+                        </li>
+                        <li class="active">Structuring code, working with modules</li>
+                        <li>Packaging, creating reusable code</li>
+                    </ol>
+                </section>
+
+                <section id="modules">
+                    <h2>Modules</h2>
+                    <h3>They're easy!</h3>
+                    <ol>
+                        <li>
+                            Add an empty <code>__init__.py</code> to <em>any</em> folder:
+                            <pre><code class="bash">$ touch __init__.py</code></pre>
+                        </li>
+                        <li>Create a Python file with some functions or classes, for example <code>fromagerie.py</code>.</li>
+                        <li>
+                            Done! <em>Locally</em> import using:
+                            <pre><code class="python">import fromagerie</code></pre> or
+                            <pre><code class="python">from fromagerie import MyClass</code></pre>
+                        </li>
+                        <li>Create package and install for global availability.</li>
+                    </ol>
+
+                    <aside class="notes">Demo: <code>from food import Food</code></aside>
+                </section>
+
+                <section>
+                    <h2>Modules</h2>
+                    <h3>Some tips</h3>
+                    <ul>
+                        <li>Group similar classes, functions</li>
+                        <li>Create a <code>utils.py</code> for the rest</li>
+                        <li>Split
+                            <ul>
+                                <li>Data processing (calculating/simulation)</li>
+                                <li>Controlling (starting/stopping stuff, user interface, configuration)</li>
+                                <li>Helpers (data conversion, utils, ...)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Packaging -->
+                <section id="packaging">
+                    <h2>Program - day 2</h2>
+                    <ol>
+                        <li>Typical gotchas; references, immutables</li>
+                        <li>Best practises
+                            <ul>
+                                <li>Classes, methods and functions; use them!</li>
+                                <li>Code formatting; PEP8</li>
+                                <li>Don’t repeat yourself; DRY</li>
+                                <li>Organizing your code; minimize globals, cleanout imports</li>
+                                <li>Comments, Docstrings: documentation</li>
+                            </ul>
+                        </li>
+                        <li>Structuring code, working with modules</li>
+                        <li class="active">Packaging, creating reusable code</li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h2>Thanks!</h2>
+                    <h3>Any questions?</h3>
+                </section>
+
+            </div>
+
+        </div>
+
+        <script src="../lib/js/head.min.js"></script>
+        <script src="../js/reveal.min.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
 
 
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
-				// transitionSpeed: 'slow',
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+                // transitionSpeed: 'slow',
 
-				// Parallax scrolling
-				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-				// parallaxBackgroundSize: '2100px 900px',
+                // Parallax scrolling
+                // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+                // parallaxBackgroundSize: '2100px 900px',
 
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-				{ src: '../lib/js/classList.js', condition: function() { return !document.body.classList; } },
-				{ src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-				{ src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-				{ src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-				{ src: '../plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-				{ src: '../plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-				]
-			});
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                { src: '../lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                { src: '../plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                { src: '../plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
 
-		</script>
-	</body>
+        </script>
+    </body>
 </html>
