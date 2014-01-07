@@ -84,19 +84,174 @@
 					</ol>
 				</section>
 
-				<section>
-					<h2>Weak references</h2>
-					<p>Objects </p>
-
-					<p>Reference: <a href="http://stackoverflow.com/a/986145">StackOverflow</a></p>
+				<section id="immutable-types">
+					<h2>Mutable and immutable types</h2>
+					<h3>Quite simple</h3>
+					<ul style="padding-bottom: 1em;">
+						<li>
+							Mutable types can be changed
+						</li>
+						<li>
+							Immutable types cannot
+						</li>
+					</ul>
+					<h3>But: there's a <strong>catch</strong>.</h3>
 				</section>
+
+				<section>
+					<h2>Mutable types</h2>
+					<ul>
+						<li>Lists: <pre><code class="python">[1, 2, 3] </code></pre></li>
+						<li>Dictionaries: <pre><code>{'key': 'value'}</code></pre></li>
+						<li>Sets: <pre><code class="python">set([1,2,3])</code></pre></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Mutable types</h2>
+					<h3>Example</h3>
+					<pre><code class="python" data-trim>
+>>> # Create a list and a second reference to it
+>>> ls = [1, 2, 3]
+>>> ls_copy = ls
+>>> # Append something to the original list
+>>> ls.append(5)
+>>> ls == ls_copy
+True
+>>> # The copy still references the same object, which is updated
+>>> ls_copy
+[1, 2, 3, 5]
+>>> # Create a new list and copy the reference to ls
+>>> new_ls = [5, 6]
+>>> ls = new_ls
+>>> # ls_copy still refers to the old list
+>>> ls == ls_copy
+False
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Immutable types</h2>
+					<ul>
+						<li>Strings: <pre><code>'blah'</code></pre></li>
+						<li>Tuples: <pre><code>(1, 2, 3)</code></pre></li>
+						<li>Frozen sets: <pre><code class="python">frozenset([1, 2,3 ])</code></pre></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Immutable types</h2>
+					<h3>Example</h3>
+					<pre><code class="python" data-trim>
+>>> bikini_string = 'pink'
+>>> marble_string = bikini_string
+>>> # This creates a new object
+>>> bikini_string += ' green'
+>>> # Note: a += 1 is equivalent to a = a + 1
+>>> bikini_string
+'pink green'
+>>> marble_string
+'pink'
+					</code></pre>
+				</section>
+
+				<section id="object-references">
+					<h2>Object References</h2>
+					<p>Actually, variables are <em>references</em> to objects.</p>
+				</section>
+
+				<section>
+					<h2>Object References</h2>
+					<p><em>References</em> are passed in arguments to functions and methods - <em>not</em> objects or variables.</p>
+
+					<pre><code data-trim class="python">
+def try_to_change_list_contents(the_list):
+    print 'got', the_list
+    the_list.append('four')
+    print 'changed to', the_list
+
+outer_list = ['one', 'two', 'three']
+
+print 'before, outer_list =', outer_list
+try_to_change_list_contents(outer_list)
+print 'after, outer_list =', outer_list
+					</code></pre>
+
+					<p style="font-size: 70%">Credits: Blair Conrad on <a href="http://stackoverflow.com/a/986145">StackOverflow</a></p>
+				</section>
+
+				<section>
+					<h2>Object References</h2>
+					<p>Consequence: <em>mutable</em> objects <em>can</em> be modified from within methods and functions.</p>
+
+					<pre><code data-trim class="python">
+before, outer_list = ['one', 'two', 'three']
+got ['one', 'two', 'three']
+changed to ['one', 'two', 'three', 'four']
+after, outer_list = ['one', 'two', 'three', 'four']
+					</code></pre>
+
+				</section>
+
+				<section>
+					<h2>Object References</h2>
+					<h3>However</h3>
+					<p>Reassigning objects replaces the references so:</p>
+					<pre><code data-trim class="python">
+def try_to_change_list_reference(the_list):
+    print 'got', the_list
+    the_list = ['and', 'we', 'can', 'not', 'lie']
+    print 'set to', the_list
+
+outer_list = ['we', 'like', 'proper', 'English']
+
+print 'before, outer_list =', outer_list
+try_to_change_list_reference(outer_list)
+print 'after, outer_list =', outer_list
+					</code></pre>
+
+					<p>Yields:</p>
+					<pre><code data-trim class="python">
+before, outer_list = ['we', 'like', 'proper', 'English']
+got ['we', 'like', 'proper', 'English']
+set to ['and', 'we', 'can', 'not', 'lie']
+after, outer_list = ['we', 'like', 'proper', 'English']									</code></pre>
+
+				</section>
+
+				<section>
+					<h2>Object References</h2>
+					<h3>And</h3>
+					<p>Immutable types will always have their reference replaced.</p>
+					<pre><code data-trim class="python">
+def try_to_change_string_reference(the_string):
+    print 'got', the_string
+    the_string = 'In a kingdom by the sea'
+    print 'set to', the_string
+
+outer_string = 'It was many and many a year ago'
+
+print 'before, outer_string =', outer_string
+try_to_change_string_reference(outer_string)
+print 'after, outer_string =', outer_string
+					</code></pre>
+
+					<p>Yields:</p>
+					<pre><code data-trim class="python">
+before, outer_string = It was many and many a year ago
+got It was many and many a year ago
+set to In a kingdom by the sea
+after, outer_string = It was many and many a year ago								</code></pre>
+
+				</section>
+
 
 				<!-- Best practises -->
 				<section id="best-practises">
 					<h2>Program - day 2</h2>
 					<ol>
 						<li>Typical gotchas; references, immutables</li>
-						<li class="active">Best practises
+						<li><span class="active">Best practises</span>
 							<ul>
 								<li>Classes, methods and functions; use them!</li>
 								<li>Code formatting; PEP8</li>
