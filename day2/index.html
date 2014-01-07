@@ -219,33 +219,6 @@ after, outer_list = ['we', 'like', 'proper', 'English']									</code></pre>
 
 				</section>
 
-				<section>
-					<h2>Object References</h2>
-					<h3>And</h3>
-					<p>Immutable types will always have their reference replaced.</p>
-					<pre><code data-trim class="python">
-def try_to_change_string_reference(the_string):
-    print 'got', the_string
-    the_string = 'In a kingdom by the sea'
-    print 'set to', the_string
-
-outer_string = 'It was many and many a year ago'
-
-print 'before, outer_string =', outer_string
-try_to_change_string_reference(outer_string)
-print 'after, outer_string =', outer_string
-					</code></pre>
-
-					<p>Yields:</p>
-					<pre><code data-trim class="python">
-before, outer_string = It was many and many a year ago
-got It was many and many a year ago
-set to In a kingdom by the sea
-after, outer_string = It was many and many a year ago								</code></pre>
-
-				</section>
-
-
 				<!-- Best practises -->
 				<section id="best-practises">
 					<h2>Program - day 2</h2>
