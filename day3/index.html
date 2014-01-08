@@ -82,6 +82,15 @@
 						<ol>
 							<li class="active">Version control; what, how and why?</li>
 							<li>
+								GIT concepts
+								<ul>
+									<li>Commits</li>
+									<li>Tree</li>
+									<li>Branches</li>
+									<li>Merges</li>
+								</ul>
+							</li>
+							<li>
 								GITting started
 								<ul>
 									<li>Creating a project/repository</li>
@@ -92,18 +101,8 @@
 									<li>Cloning from existing repository</li>
 								</ul>
 							</li>
+							<li>Hosting repositories</li>
 							<li>Graphical utils</li>
-							<li>
-								GIT concepts
-								<ul>
-									<li>Tree</li>
-									<li>Branches</li>
-									<li>Commits</li>
-									<li>Forks</li>
-									<li>Merges</li>
-									<li>Hashes</li>
-								</ul>
-							</li>
 						</ol>
 					</div>
 				</section>
@@ -207,7 +206,13 @@ $ git log sample.tex
 				<section>
 					<h2>GIT (and Mercurial, Bazaar)</h2>
 					<h3>Complete history on <em>your</em> computer.</h3>
-					<img width="60%" src="images/versions.png">
+					<img style="border: none;" width="50%" src="images/versions.png">
+				</section>
+
+				<section>
+					<h2>GIT (and Mercurial, Bazaar)</h2>
+					<h3>Version database synchronized across repositories</h3>
+					<img style="border: none;" width="50%" src="images/synchronization.png">
 				</section>
 
 				<section>
@@ -219,8 +224,6 @@ $ git log sample.tex
 						<li>GIT-protocol over SSH</li>
 						<li>No server needed</li>
 					</ul>
-
-					<img width="60%" src="images/synchronization.png">
 				</section>
 
 				<section data-background-image="images/git_vs_svn.jpg" data-background-size="contain"></section>
@@ -235,7 +238,155 @@ $ git log sample.tex
 					</ul>
 				</section>
 
-				<section id="getting-started">
+				<section>
+					<h2>
+						<span>Program - day 3</span>
+						<br>
+					</h2>
+					<div>
+						<ol>
+							<li>Version control; what, how and why?</li>
+							<li class="active">
+								GIT concepts
+								<ul>
+									<li>Commits</li>
+									<li>Branches</li>
+									<li>Merges</li>
+								</ul>
+							</li>
+							<li>
+								GITting started
+								<ul>
+									<li>Creating a project/repository</li>
+									<li>Committing changes</li>
+									<li>Viewing history</li>
+									<li>Reverting changes</li>
+									<li>Synchronizing changes</li>
+									<li>Cloning from existing repository</li>
+								</ul>
+							</li>
+							<li>Hosting repositories</li>
+							<li>Graphical utils</li>
+						</ol>
+					</div>
+				</section>
+
+				<section>
+					<h2>GIT Concepts</h2>
+					<h3>Commits</h3>
+
+					<ul>
+						<li>Atomic set of changes</li>
+						<li>Requires description (commit message)</li>
+						<li>Generates unique hash (code) for reference</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>GIT Concepts</h2>
+					<h3>Commits</h3>
+
+					<p>Make changes, stage files (<code>git add</code>), make commit.</p>
+
+					<img src="images/stage_commit.png" alt="Commits">
+				</section>
+
+				<section>
+					<h2>GIT Concepts</h2>
+					<h3>Commits</h3>
+
+					<p>Commits refer to snapshots of your code, connected in a tree.</p>
+
+					<img src="images/commits2.png" alt="Commits">
+				</section>
+
+				<section>
+					<h2>GIT Concepts</h2>
+					<h3>Branches</h3>
+
+					<p>Making changes from different starting points.</p>
+
+					<img width="70%" src="images/branches.png" alt="Branches">
+
+				</section>
+
+				<section>
+					<h2>GIT Concepts</h2>
+					<h3>Merges</h3>
+
+					<p>Merges bring branches back together.</p>
+
+					<img width="80%" src="images/merging.png" alt="Merging">
+
+				</section>
+
+				<section>
+					<h2>GIT Concepts</h2>
+					<h3>Merges</h3>
+
+					<p>
+						Many people working simultaneously <br>on the same project: <em>no problem</em>!
+					</p>
+
+				</section>
+
+				<section>
+					<h2>Merges</h2>
+					<img width="80%" src="images/merging2.png" alt="Merging">
+
+				</section>
+
+				<section>
+					<h2>GIT Concepts</h2>
+					<h3>Merge conflicts</h3>
+
+					<p>
+						Two people modified the same <em>part</em> of the
+						same <em>file</em>.
+					</p>
+					<p>
+						Solution: manually edit conflicting files, stage them
+						and commit.
+					</p>
+
+					<p>Reference: <a href="http://githowto.com/resolving_conflicts">Git How To on Merge Conflicts</a></p>
+				</section>
+
+				<section>
+					<h2>
+						<span>Program - day 3</span>
+						<br>
+					</h2>
+					<div>
+						<ol>
+							<li>Version control; what, how and why?</li>
+							<li>
+								GIT concepts
+								<ul>
+									<li>Commits</li>
+									<li>Tree</li>
+									<li>Branches</li>
+									<li>Merges</li>
+								</ul>
+							</li>
+							<li class="active" id="getting-started">
+								GITting started
+								<ul>
+									<li>Creating a project/repository</li>
+									<li>Committing changes</li>
+									<li>Viewing history</li>
+									<li>Reverting changes</li>
+									<li>Sharing your repo</li>
+									<li>Cloning from existing repository</li>
+								</ul>
+							</li>
+							<li>Hosting repositories</li>
+							<li>Graphical utils</li>
+						</ol>
+					</div>
+				</section>
+
+				<section>
 					<h2>GITting started</h2>
 					<h3>Creating a project/repository</h3>
 					<pre><code class="bash" data-trim>
