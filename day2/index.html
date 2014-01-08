@@ -582,26 +582,58 @@ neat_code.py:136:80: E501 line too long (103 > 79 characters)
                     </ul>
                 </section>
 
-                <section>
+                <section id="snowball">
                     <h2>Modules</h2>
                     <h3>Example project 'Snowball'</h3>
                     <pre><code data-trim>
 snowball --- __init__.py
-          |- snowball.py
+          |- main.py
           |- utils.py
+          |- climate.py
           `- water --- __init__.py
-                    |- ice.py
-                    |- liquid.py
-                    `- gas.py
+                    `- phases.py
                     </code></pre>
                 </section>
 
                 <section>
                     <h2>Project Snowball</h2>
-                    <p><code>snowball.py</code></p>
-                    <pre><code class="python" data-trim>
-class
-                    </code></pre>
+                    <p class="active"><code>main.py</code></p>
+                    <p>
+                        Contains 'main' functionality typically used in external
+                        applications. Could also be named <code>core.py</code>
+                        or <code>snowball.py</code>.
+                    </p>
+                    <p>
+                        No clear naming convention here - just the fact that
+                        only minimal work should be done from the 'main' module.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Project Snowball</h2>
+                    <p class="active"><code>utils.py</code></p>
+                    <p>Non-specific util functions or classes that are otherwise ungroupable.</p>
+                    <p>Examples: data conversion, common data structure manipulation, file reading wrappers.</p>
+                </section>
+
+                <section>
+                    <h2>Project Snowball</h2>
+                    <p class="active"><code>climate.py</code></p>
+                    <p>
+                        Contains climate-related classes and functions.
+                    </p>
+                    <p>In this case a <code>WeatherProbe</code>.</p>
+                </section>
+
+                <section>
+                    <h2>Project Snowball</h2>
+                    <p class="active"><code>water</code></p>
+                    <p>
+                        Module grouping code related to water physics, like
+                        phase-transition logic in <code class="active">water/phases.py</code>
+                        which contains <code>WaterVapor</code>, <code>IceCrystal</code>
+                        and <code>SnowFlake</code>.
+                    </p>
                 </section>
 
                 <!-- Packaging -->
