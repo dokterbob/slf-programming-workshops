@@ -30,13 +30,21 @@
 	<![endif]-->
 
 	<style type="text/css">
-		.dropshadow h1, .dropshadow h2, .dropshadow h3, .dropshadow {
-			text-shadow: 0 0 10px #000;
-		}
+        .dropshadow h1, .dropshadow h2, .dropshadow h3, .dropshadow {
+            text-shadow: 0 0 10px #000;
+        }
 
-		.active {
-			color: yellow;
-		}
+        .active, code.filename {
+            color: yellow;
+        }
+
+        .reference {
+            font-size: 70%;
+        }
+
+        section > ul {
+            margin-bottom: 1em !important;
+        }
 	</style>
 
 	</head>
@@ -53,7 +61,7 @@
 						Lecture 3 of 3
 					</h2>
 					<div>
-						<div>Mathijs de Bruin (mathijs@mathijsfietst.nl), &nbsp;January 7, 2014</div>
+						<div>Mathijs de Bruin (mathijs@mathijsfietst.nl), &nbsp;January 8, 2014</div>
 						<div>The WSL Institute for Snow and Avalanche Research SLF</div>
 					</div>
 				</section>
@@ -67,12 +75,12 @@
 
 				<section>
 					<h2>
-						<span>program - day 3</span>
+						<span>Program - day 3</span>
 						<br>
 					</h2>
 					<div>
 						<ol>
-							<li>Version control; what, how and why?</li>
+							<li class="active">Version control; what, how and why?</li>
 							<li>GIT concepts
 								<ul>
 									<li>Branches</li>
@@ -87,6 +95,76 @@
 							<li>Having your code and forking it too</li>
 						</ol>
 					</div>
+				</section>
+
+				<section>
+					<h2>Version Control</h2>
+					<h3>What</h3>
+					<blockquote>
+						Version control is a system that records changes to a file or set of files over time so that you can recall specific versions later.
+					</blockquote>
+					<p class="reference">Reference: <a href="http://git-scm.com/book/en/Getting-Started-About-Version-Control">GIT - About Version Control</a></p>
+				</section>
+
+				<section>
+					<h2>Version Control</h2>
+					<h3>How</h3>
+					<p>
+						Software automating:
+						<ul>
+							<li>Detection of changes</li>
+							<li>Managing project history</li>
+							<li>Remote synchronization</li>
+						</ul>
+					</p>
+				</section>
+
+				<section>
+					<h2>Version Control</h2>
+					<h3>Why</h3>
+					<ul>
+						<li>Full change history</li>
+						<li>Revert specific changes</li>
+						<li>Collaborate seamlessly</li>
+						<li>Backup multiple versions</li>
+					</ul>
+				</section>
+
+				<section data-background-image="images/time_machine.png" class="dropshadow">
+					<h2>Version Control</h2>
+					<h3>A Brief (incomplete) History</h3>
+				</section>
+
+				<section>
+					<h2>CVS</h2>
+					<pre><code data-trim class="bash">
+$ cvs checkout cvsexample
+$ cvs add sample.tex
+$ cvs status
+$ cvs commit -m "original files" *.tex
+$ cvs update
+$ cvs diff
+$ cvs log sample.tex
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Subversion (SVN)</h2>
+					<pre><code data-trim class="bash">
+$ svn checkout http://host_name/svn_dir/repository_name/project/trunk project
+$ svn add sample.tex
+$ svn status
+$ svn commit -m "original files" *.tex
+$ svn update
+$ svn diff
+$ svn log sample.tex
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>GIT</h2>
+					<pre><code data-trim class="bash">
+					</code></pre>
 				</section>
 
 				<section>
