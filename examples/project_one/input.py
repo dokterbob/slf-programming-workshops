@@ -12,17 +12,9 @@ def read_file(filename):
         if len(numbers) != 2:
             # Convert strings to numbers
 
-            numbers2 = []
-            for number in numbers:
-                # Convert number to float
-                number = float(number)
-
-                # Append to temperary list
-                numbers2.append(number)
-
-            # Replace numbers by numbers2
-            numbers = numbers2
-
+            # map() calls the first argument on every item in the second
+            # argument and returns a list of results.
+            numbers = map(float, numbers)
         else:
             # We're processing a header
             print 'Skipping header line'
