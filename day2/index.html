@@ -34,7 +34,7 @@
             text-shadow: 0 0 10px #000;
         }
 
-        .active {
+        .active, code.filename {
             color: yellow;
         }
 
@@ -593,7 +593,7 @@ neat_code.py:136:80: E501 line too long (103 > 79 characters)
                 <section id="snowball">
                     <h2>Modules</h2>
                     <h3>Example project 'Snowball'</h3>
-                    <pre><code data-trim>
+                    <pre><code data-trim class="no-highlight">
 snowball --- __init__.py
           |- main.py
           |- utils.py
@@ -605,7 +605,7 @@ snowball --- __init__.py
 
                 <section>
                     <h2>Project Snowball</h2>
-                    <p class="active"><code>main.py</code></p>
+                    <p><code class="filename">main.py</code></p>
                     <p>
                         Contains 'main' functionality typically used in external
                         applications. Could also be named <code>core.py</code>
@@ -619,14 +619,14 @@ snowball --- __init__.py
 
                 <section>
                     <h2>Project Snowball</h2>
-                    <p class="active"><code>utils.py</code></p>
+                    <p><code class="filename">utils.py</code></p>
                     <p>Non-specific util functions or classes that are otherwise ungroupable.</p>
                     <p>Examples: data conversion, common data structure manipulation, file reading wrappers.</p>
                 </section>
 
                 <section>
                     <h2>Project Snowball</h2>
-                    <p class="active"><code>climate.py</code></p>
+                    <p><code class="filename">climate.py</code></p>
                     <p>
                         Contains climate-related classes and functions.
                     </p>
@@ -635,10 +635,10 @@ snowball --- __init__.py
 
                 <section>
                     <h2>Project Snowball</h2>
-                    <p class="active"><code>water</code></p>
+                    <p><code class="filename">water</code></p>
                     <p>
                         Module grouping code related to water physics, like
-                        phase-transition logic in <code class="active">water/phases.py</code>
+                        phase-transition logic in <code class="filename">water/phases.py</code>
                         which contains <code>WaterVapor</code>, <code>IceCrystal</code>
                         and <code>SnowFlake</code>.
                     </p>
@@ -687,19 +687,123 @@ snowball --- __init__.py
                 <section>
                     <h2>Project layout</h2>
                     <h3>Example project 'Snowball'</h3>
-                    <pre><code data-trim>
+                    <pre><code data-trim class="no-highlight">
 snowball --- setup.py
           |- README.rst
+          |- LICENSE.rst
           `- snowball --- __init__.py
-                       |- snowball.py
+                       |- main.py
                        |- utils.py
+                       |- climate.py
                        `- water --- __init__.py
-                                 |- ice.py
-                                 |- liquid.py
-                                 `- gas.py
+                                 `- phases.py
                     </code></pre>
                 </section>
 
+                <section>
+                    <h2>Packaging</h2>
+                    <h3>The beginning and end:</h3>
+                    <p><code class="filename">setup.py</code></p>
+                    <pre><code data-trim class="python">
+from distutils.core import setup
+
+setup(
+    name='snowball',
+    version='0.1dev',
+    packages=['snowball',],
+    license='BSD',
+    long_description=open('README.rst').read(),
+)                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Distributing</h2>
+                    <h3>Packaging and installing</h3>
+                    <p>Creating a distribution (tarball)</p>
+                    <pre><code class="bash">$ python setup.py sdist</code></pre>
+
+                    <p>Install <em>without</em> publishing</em></p>
+                    <pre><code class="bash" data-trim>
+$ pip install -e git+https://github.com/dokterbob/snowball.git#egg=snowball
+$ pip install http://some.domain/snowball-0.1.tar.gz
+                    </code></pre>
+                 </section>
+
+                <section>
+                    <h2>Distributing</h2>
+                    <h3>Publishing</h3>
+
+                    <p>Registering it for PyPI</p>
+                    <pre><code class="bash">$ python setup.py register</code></pre>
+
+                    <p>Uploading and publishing</p>
+                    <pre><code class="bash">$ python setup.py sdist bdist_wininst upload</code></pre>
+
+                    <p>Installing</p>
+                    <pre><code class="bash">$ pip install snowball</code></pre>
+                </section>
+
+                <section>
+                    <h2>Licensing</h2>
+                    <h3>Use BSD, it's simple and great!</h3>
+                    <span style="text-align: left;">
+                        <p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
+
+                        <p>1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</p>
+
+                        <p>2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</p>
+
+                        <p>3. Neither the name of the SLF nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</p>
+                    </span>
+
+                    <p class="reference">Reference: <a href="http://opensource.org/licenses/BSD-3-Clause">Full 3-clause BSD license</a></p>
+                </section>
+
+                <section>
+                    <h2>Licensing</h2>
+                    <h3>Other licenses</h3>
+                    <ul>
+                        <li>GNU Public License (GPL): 'forces' freedom</li>
+                        <li>LGPL: 'forces' a little less freedom</li>
+                        <li>AGPL: GPL for hosted applications</li>
+                        <li>MIT, Mozilla, Apache: similar to BSD</li>
+                    </ul>
+
+                    <p class="reference">Reference: <a href="http://choosealicense.com/">choosealicense.com</a></p>
+                </section>
+
+                <section>
+                    <h2>README.rst</h2>
+                    <h3>Minimal documentation</h3>
+                    <ul>
+                        <li>What is it?</li>
+                        <li>How to use it?</li>
+                        <li>Getting started</li>
+                        <li>Requirements</li>
+                        <li>License</li>
+                        <li>Author/maintainer</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>ReStructuredText files</h2>
+                    <p><code class="filename">README.rst</code> and <code class="filename">LICENSE.rst</code></p>
+                    <pre><code data-trim>
+Title of file
+=============
+
+Subtitle
+--------
+* List item 1
+* List item 2
+
+`Link &lt;https://www.google.com&gt;`_
+                    </code></pre>
+
+                    <p>Similar to Markdown.</p>
+
+                    <p class="reference">See: <a href="http://docutils.sourceforge.net/docs/user/rst/quickstart.html">ReStructuredText Primer</a></p>
+                </section>
 
                 <section>
                     <h2>Thanks!</h2>
