@@ -136,7 +136,19 @@
 				</section>
 
 				<section>
-					<h2>CVS</h2>
+					<h2>Revision Control System (RCS)</h2>
+					<p>Released in 1982 by Walter F. Tichy.</p>
+					<pre><code data-trim class="bash">
+$ co sample.tex
+$ ci sample.tex
+$ rcsdiff sample.tex
+$ rlog sample.tex
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Concurrent Versions System (CVS)</h2>
+					<p>Developed in 1986 bt Dick Grune at the UvA.</p>
 					<pre><code data-trim class="bash">
 $ cvs checkout cvsexample
 $ cvs add sample.tex
@@ -150,6 +162,7 @@ $ cvs log sample.tex
 
 				<section>
 					<h2>Subversion (SVN)</h2>
+					<p>Created in 2000 by CollabNet as the sequel to CVS.</p>
 					<pre><code data-trim class="bash">
 $ svn checkout http://host_name/svn_dir/repository_name/project/trunk project
 $ svn add sample.tex
@@ -163,8 +176,45 @@ $ svn log sample.tex
 
 				<section>
 					<h2>GIT</h2>
+					<p>Invented in 2005 by Linus Torvalds out of sheer frustration.</p>
 					<pre><code data-trim class="bash">
+$ git clone https://github.com/dokterbob/slf-programming-workshops.git
+$ git add sample.tex
+$ git status
+$ git commit -m "original files" *.tex
+$ git pull / git push
+$ git diff
+$ git log sample.tex
 					</code></pre>
+				</section>
+
+				<section>
+					<h2>GIT (and Mercurial, Bazaar)</h2>
+					<h3>Complete history on <em>your</em> computer.</h3>
+					<img width="60%" src="images/versions.png">
+				</section>
+
+				<section>
+					<h2>GIT (and Mercurial, Bazaar)</h2>
+					<h3>Version database synchronized across repositories</h3>
+					<ul>
+						<li>Web/HTTP</li>
+						<li>GIT-protocol</li>
+						<li>GIT-protocol over SSH</li>
+						<li>No server needed</li>
+					</ul>
+				</section>
+
+				<section data-background-image="images/git_vs_svn.jpg" data-background-size="contain"></section>
+
+				<section>
+					<h2>GIT vs. SVN</h2>
+					<ul>
+						<li>Quick <em>offline</em> commits</li>
+						<li>Full history offline</li>
+						<li>Create branches - free <em>and</em> offline</li>
+						<li>More commits ➞ less merge conflicts</li>
+					</ul>
 				</section>
 
 				<section>
