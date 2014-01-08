@@ -1,4 +1,9 @@
 def import_data(filename):
+    """
+    Read filename, skip headers, parse numbers.
+    Returns list with lists.
+    """
+
     # Open the file
     file_obj = open(filename)
 
