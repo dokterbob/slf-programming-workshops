@@ -37,6 +37,14 @@
         .active {
             color: yellow;
         }
+
+        .reference {
+            font-size: 70%;
+        }
+
+        section > ul {
+            margin-bottom: 1em !important;
+        }
     </style>
 
     </head>
@@ -87,7 +95,7 @@
                 <section id="immutable-types">
                     <h2>Mutable and immutable types</h2>
                     <h3>Quite simple</h3>
-                    <ul style="padding-bottom: 1em;">
+                    <ul>
                         <li>
                             Mutable types can be changed
                         </li>
@@ -177,7 +185,7 @@ try_to_change_list_contents(outer_list)
 print 'after, outer_list =', outer_list
                     </code></pre>
 
-                    <p style="font-size: 70%">Credits: Blair Conrad on <a href="http://stackoverflow.com/a/986145">StackOverflow</a></p>
+                    <p class="reference">Credits: Blair Conrad on <a href="http://stackoverflow.com/a/986145">StackOverflow</a></p>
                 </section>
 
                 <section>
@@ -245,7 +253,7 @@ after, outer_list = ['we', 'like', 'proper', 'English']                         
                         <li>Isolating dependencies</li>
                         <li>Reducing scope</li>
                     </ul>
-                    <h3 style="padding-top: 1em;">Leads to</h3>
+                    <h3>Leads to</h3>
                     <ul>
                         <li>More oversight</li>
                         <li>Increased simplicity</li>
@@ -653,6 +661,27 @@ snowball --- __init__.py
                         <li>Structuring code, working with modules</li>
                         <li class="active">Packaging, creating reusable code</li>
                     </ol>
+                </section>
+
+                <section>
+                    <h2>Packaging</h2>
+                    <h3>Creating Eggs (Python packages)</h3>
+                    <ul>
+                        <li>Self-contained 'libraries' or modules</li>
+                        <li>Installable, upgradable</li>
+                        <li>Versioned</li>
+                        <li>
+                            Distributable through:
+                            <ul>
+                                <li>PyPI</li>
+                                <li>HTTP/FTP</li>
+                                <li>VCS; GitHub/SVN/Mercurial</li>
+                                <li>Files</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <p>Reference: <a href="http://guide.python-distribute.org/">The Hitchhiker’s Guide to Packaging</a></p>
                 </section>
 
                 <section>
