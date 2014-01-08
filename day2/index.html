@@ -713,15 +713,16 @@ snowball --- setup.py
                     <h3>The beginning and end:</h3>
                     <p><code class="filename">setup.py</code></p>
                     <pre><code data-trim class="python">
-from distutils.core import setup
+from setuptools import setup, find_packages
 
 setup(
-    name='snowball',
-    version='0.1dev',
-    packages=['snowball',],
-    license='BSD',
-    long_description=open('README.rst').read(),
-)                    </code></pre>
+    name = 'snowball',
+    version = '0.1dev',
+    packages = find_packages(),
+    license = 'BSD',
+    long_description = open('README.rst').read(),
+)
+                    </code></pre>
                 </section>
 
                 <section>
