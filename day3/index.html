@@ -81,7 +81,21 @@
 					<div>
 						<ol>
 							<li class="active">Version control; what, how and why?</li>
-							<li>GIT concepts
+							<li>
+								GITting started
+								<ul>
+									<li>Creating a repository</li>
+									<li>Adding files</li>
+									<li>Committing changes</li>
+									<li>Viewing history</li>
+									<li>Viewing changes</li>
+									<li>Reverting changes</li>
+									<li>Pushing to GitHub</li>
+									<li>Pulling from GitHub</li>
+								</ul>
+							</li>
+							<li>
+								GIT concepts
 								<ul>
 									<li>Branches</li>
 									<li>Commits</li>
@@ -90,9 +104,6 @@
 									<li>Hashes</li>
 								</ul>
 							</li>
-							<li>Setting up an example project</li>
-							<li>And hosting it too (Bitbucket, GitHub)</li>
-							<li>Having your code and forking it too</li>
 						</ol>
 					</div>
 				</section>
@@ -215,6 +226,262 @@ $ git log sample.tex
 						<li>Create branches - free <em>and</em> offline</li>
 						<li>More commits ➞ less merge conflicts</li>
 					</ul>
+				</section>
+
+				<section id="getting-started">
+					<h2>GITting started</h2>
+					<h3>Creating a project/repository</h3>
+					<pre><code class="bash" data-trim>
+~ $ git init testproject
+Initialized empty Git repository in /Users/drbob/testproject/.git/
+~ $ cd testproject/
+~/testproject $
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>GITting started</h2>
+					<h3>Check file status</h3>
+					<pre><code class="bash" data-trim>
+~/testproject $ git status
+# On branch master
+#
+# Initial commit
+#
+nothing to commit (create/copy files and use "git add" to track)
+~/testproject $ echo 'Hello world' &gt; newfile.txt
+~/testproject $ git status
+# On branch master
+#
+# Initial commit
+#
+# Untracked files:
+#   (use "git add &lt;file&gt;..." to include in what will be committed)
+#
+#	newfile.txt
+nothing added to commit but untracked files present (use "git add" to track)
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>GITting started</h2>
+					<h3>Adding/staging files for commit</h3>
+					<pre><code class="bash" data-trim>
+~/testproject $ git add newfile.txt
+~/testproject $ git status
+# On branch master
+#
+# Initial commit
+#
+# Changes to be committed:
+#   (use "git rm --cached &lt;file&gt;..." to unstage)
+#
+#	new file:   newfile.txt
+#
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>GITting started</h2>
+					<h3>Committing changes</h3>
+					<pre><code class="bash" data-trim>
+~/testproject $ git status
+# On branch master
+#
+# Initial commit
+#
+# Changes to be committed:
+#   (use "git rm --cached &lt;file&gt;..." to unstage)
+#
+#	new file:   newfile.txt
+#
+~/testproject $ git commit -m 'Initial checkin'
+[master (root-commit) 19dc4a6] Initial checkin
+ 1 file changed, 1 insertion(+)
+ create mode 100644 newfile.txt
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>GITting started</h2>
+					<h3>Viewing history</h3>
+					<pre><code class="bash" data-trim>
+~/testproject $ git log
+commit 19dc4a63d545c107ff5105ef3dea3d11bbb9d19d
+Author: Mathijs de Bruin &lt;mathijs@mathijsfietst.nl&gt;
+Date:   Wed Jan 8 20:57:55 2014 +0100
+
+    Initial checkin
+~/testproject $ git log -u
+commit 19dc4a63d545c107ff5105ef3dea3d11bbb9d19d
+Author: Mathijs de Bruin <mathijs@mathijsfietst.nl>
+Date:   Wed Jan 8 20:57:55 2014 +0100
+
+    Initial checkin
+
+diff --git a/newfile.txt b/newfile.txt
+new file mode 100644
+index 0000000..802992c
+--- /dev/null
++++ b/newfile.txt
+@@ -0,0 +1 @@
++Hello world
+   					</code></pre>
+				</section>
+
+				<section>
+					<h2>GITting started</h2>
+					<h3>Viewing changes</h3>
+					<pre><code class="bash" data-trim>
+~/testproject $ echo 'New line' >> newfile.txt
+~/testproject $ git diff
+diff --git a/newfile.txt b/newfile.txt
+index 802992c..319cb18 100644
+--- a/newfile.txt
++++ b/newfile.txt
+@@ -1 +1,2 @@
+ Hello world
++New line
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>GITting started</h2>
+					<h3>Trashing changes</h3>
+					<pre><code class="bash" data-trim>
+~/testproject $ git status
+# On branch master
+# Changes not staged for commit:
+#   (use "git add &lt;file&gt;..." to update what will be committed)
+#   (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+#
+#	modified:   newfile.txt
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+~/testproject $ git checkout newfile.txt
+~/testproject $ git status
+# On branch master
+nothing to commit, working directory clean
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>GITting started</h2>
+					<h3>Commit additional changes</h3>
+					<pre><code class="bash" data-trim>
+~/testproject $ echo 'New line' >> newfile.txt
+~/testproject $ git add newfile.txt
+~/testproject $ git commit -m 'Added a line.'
+[master a943163] Added a line.
+~/testproject $ git log -u
+commit a943163aa561313238020d3fe509d2b70d921242
+Author: Mathijs de Bruin &lt;mathijs@mathijsfietst.nl&gt;
+Date:   Wed Jan 8 21:08:40 2014 +0100
+
+    Added a line.
+
+commit 19dc4a63d545c107ff5105ef3dea3d11bbb9d19d
+Author: Mathijs de Bruin &lt;mathijs@mathijsfietst.nl&gt;
+Date:   Wed Jan 8 20:57:55 2014 +0100
+
+    Initial checkin
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>GITting started</h2>
+					<h3>Reverting changes</h3>
+					<pre><code class="bash" data-trim>
+~/testproject $ git revert --no-edit a9431
+[master aecf30c] Revert "Added a line."
+ 1 file changed, 1 deletion(-)
+~/testproject $ git log
+commit aecf30c49c79542b6be4b2a499cb34f222bc3353
+Author: Mathijs de Bruin &lt;mathijs@mathijsfietst.nl&gt;
+Date:   Wed Jan 8 21:14:46 2014 +0100
+
+    Revert "Added a line."
+
+    This reverts commit a943163aa561313238020d3fe509d2b70d921242.
+
+commit a943163aa561313238020d3fe509d2b70d921242
+Author: Mathijs de Bruin &lt;mathijs@mathijsfietst.nl&gt;
+Date:   Wed Jan 8 21:08:40 2014 +0100
+
+    Added a line.
+
+commit 19dc4a63d545c107ff5105ef3dea3d11bbb9d19d
+Author: Mathijs de Bruin &lt;mathijs@mathijsfietst.nl&gt;
+Date:   Wed Jan 8 20:57:55 2014 +0100
+
+    Initial checkin
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>GITting started</h2>
+					<h3>Sharing your repo</h3>
+					<pre><code class="bash" data-trim>
+~/testproject $ git remote add origin git@github.com:dokterbob/testproj
+~/testproject $ git push -u origin master
+Counting objects: 7, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (7/7), 585 bytes | 0 bytes/s, done.
+Total 7 (delta 1), reused 0 (delta 0)
+To git@github.com:dokterbob/testproject.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.							</code></pre>
+				</section>
+
+				<section>
+					<h2>GITting started</h2>
+					<h3>Fetching work from others</h3>
+					<pre><code class="bash" data-trim>
+~/testproject $ git pull
+remote: Counting objects: 5, done.
+remote: Total 3 (delta 0), reused 3 (delta 0)
+Unpacking objects: 100% (3/3), done.
+From github.com:dokterbob/testproject
+   aecf30c..1f8cff3  master     -> origin/master
+Updating aecf30c..1f8cff3
+Fast-forward
+ newfile.txt | 1 +
+ 1 file changed, 1 insertion(+)
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>GITting started</h2>
+					<h3>Sharing additional changes</h3>
+					<pre><code data-trim>
+~/testproject $ git pull
+Already up-to-date.
+~/testproject $ git push
+Counting objects: 5, done.
+Writing objects: 100% (3/3), 298 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To git@github.com:dokterbob/testproject.git
+   1f8cff3..aed0b28  master -> master
+   					</code></pre>
+				</section>
+
+				<section>
+					<h2>GITting started</h2>
+					<h3>Starting from existing repository</h3>
+					<pre><code data-trim>
+/tmp $ git clone git@github.com:dokterbob/testproject.git
+Cloning into 'testproject'...
+remote: Counting objects: 7, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 7 (delta 1), reused 7 (delta 1)
+Receiving objects: 100% (7/7), done.
+Resolving deltas: 100% (1/1), done.
+Checking connectivity... done
+/tmp $ cd testproject/
+/tmp/testproject $ ls
+newfile.txt
+   					</code></pre>
 				</section>
 
 				<section>
