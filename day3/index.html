@@ -402,7 +402,7 @@ $ git log sample.tex
 				<section>
 					<h2>GITting started</h2>
 					<h3>Creating a project/repository</h3>
-					<pre><code class="bash" data-trim>
+					<pre><code class="no-highlight" data-trim>
 ~ $ git init testproject
 Initialized empty Git repository in /Users/drbob/testproject/.git/
 ~ $ cd testproject/
@@ -413,7 +413,7 @@ Initialized empty Git repository in /Users/drbob/testproject/.git/
 				<section>
 					<h2>GITting started</h2>
 					<h3>Check file status</h3>
-					<pre><code class="bash" data-trim>
+					<pre><code class="no-highlight" data-trim>
 ~/testproject $ git status
 # On branch master
 #
@@ -437,7 +437,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 				<section>
 					<h2>GITting started</h2>
 					<h3>Adding/staging files for commit</h3>
-					<pre><code class="bash" data-trim>
+					<pre><code class="no-highlight" data-trim>
 ~/testproject $ git add newfile.txt
 ~/testproject $ git status
 # On branch master
@@ -455,7 +455,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 				<section>
 					<h2>GITting started</h2>
 					<h3>Committing changes</h3>
-					<pre><code class="bash" data-trim>
+					<pre><code class="no-highlight" data-trim>
 ~/testproject $ git status
 # On branch master
 #
@@ -476,7 +476,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 				<section>
 					<h2>GITting started</h2>
 					<h3>Viewing history</h3>
-					<pre><code class="bash" data-trim>
+					<pre><code class="no-highlight" data-trim>
 ~/testproject $ git log
 commit 19dc4a63d545c107ff5105ef3dea3d11bbb9d19d
 Author: Mathijs de Bruin &lt;mathijs@mathijsfietst.nl&gt;
@@ -503,7 +503,7 @@ index 0000000..802992c
 				<section>
 					<h2>GITting started</h2>
 					<h3>Viewing changes</h3>
-					<pre><code class="bash" data-trim>
+					<pre><code class="no-highlight" data-trim>
 ~/testproject $ echo 'New line' >> newfile.txt
 ~/testproject $ git diff
 diff --git a/newfile.txt b/newfile.txt
@@ -519,7 +519,7 @@ index 802992c..319cb18 100644
 				<section>
 					<h2>GITting started</h2>
 					<h3>Trashing changes</h3>
-					<pre><code class="bash" data-trim>
+					<pre><code class="no-highlight" data-trim>
 ~/testproject $ git status
 # On branch master
 # Changes not staged for commit:
@@ -539,7 +539,7 @@ nothing to commit, working directory clean
 				<section>
 					<h2>GITting started</h2>
 					<h3>Commit additional changes</h3>
-					<pre><code class="bash" data-trim>
+					<pre><code class="no-highlight" data-trim>
 ~/testproject $ echo 'New line' >> newfile.txt
 ~/testproject $ git add newfile.txt
 ~/testproject $ git commit -m 'Added a line.'
@@ -562,7 +562,7 @@ Date:   Wed Jan 8 20:57:55 2014 +0100
 				<section>
 					<h2>GITting started</h2>
 					<h3>Reverting changes</h3>
-					<pre><code class="bash" data-trim>
+					<pre><code class="no-highlight" data-trim>
 ~/testproject $ git revert --no-edit a9431
 [master aecf30c] Revert "Added a line."
  1 file changed, 1 deletion(-)
@@ -592,7 +592,7 @@ Date:   Wed Jan 8 20:57:55 2014 +0100
 				<section>
 					<h2>GITting started</h2>
 					<h3>Sharing your repo</h3>
-					<pre><code class="bash" data-trim>
+					<pre><code class="no-highlight" data-trim>
 ~/testproject $ git remote add origin git@github.com:dokterbob/testproj
 ~/testproject $ git push -u origin master
 Counting objects: 7, done.
@@ -608,7 +608,7 @@ Branch master set up to track remote branch master from origin.							</code></p
 				<section>
 					<h2>GITting started</h2>
 					<h3>Fetching work from others</h3>
-					<pre><code class="bash" data-trim>
+					<pre><code class="no-highlight" data-trim>
 ~/testproject $ git pull
 remote: Counting objects: 5, done.
 remote: Total 3 (delta 0), reused 3 (delta 0)
